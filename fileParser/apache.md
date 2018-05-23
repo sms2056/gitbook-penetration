@@ -1,16 +1,16 @@
-#  Apache文件解析漏洞
+# Apache文件解析漏洞
 
 ---
 
 ## 一. Apache安装
 
-1. Linux + Apache + Mysql + PHP
-2. XAMPP\(WIndows\)
-3. LAMPP\(Linux\)
+* Linux + Apache + Mysql + PHP
 
-4. WampServer\(Linux\)
+* XAMPP\(WIndows\)
 
+* LAMPP\(Linux\)
 
+* WampServer\(Linux\)
 
 
 
