@@ -61,13 +61,16 @@ DefaultType text/plain
 
 这总是奏效的吗？按理来说，由于这是特性而不是漏洞，所以适用于所有版本的Apache。
 
-我们来做个实验。准备一个文件，内容随意，命名为test.jpg.aaa，放置在Apache中，然后在浏览器中访问它，结果如下图所示：
+我们来做个实验。准备一个文件，内容随意，命名为test.php.aaa，放置在Apache中，然后在浏览器中访问它，结果如下图所示：
 
 ```php
+# test.php.aaa
 <?php
     phpinfo();
 ?>
 ```
+
+![](/fileParser/image/apache-testphp.png)
 
 
 
