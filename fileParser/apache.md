@@ -45,15 +45,15 @@
 DefaultType text/plain
 ```
 
-    哪些后缀Apache认识，哪些不认识？在\`apache/conf\`中存在一个名为mime.types的文件，其中记录着Apache能够识别的后缀。
+哪些后缀Apache认识，哪些不认识？在\\`apache/conf\\`中存在一个名为mime.types的文件，其中记录着Apache能够识别的后缀。
 
-    在Ubuntu下，该文件位于/etc/mime.types.
+在Ubuntu下，该文件位于/etc/mime.types.
 
-   在Windows下，该文件位于C:/apache/conf/mime.types（类似这样的，注意Apache的安装路径）。
+在Windows下，该文件位于C:/apache/conf/mime.types（类似这样的，注意Apache的安装路径）。
 
-    该文件是一个一对多的映射表，定义了某一种文件类型，对应的几种后缀。
+该文件是一个一对多的映射表，定义了某一种文件类型，对应的几种后缀。
 
-    除了该文件，在Apache的配置文件中，还可以用AddCharset语句添加映射，如：
+除了该文件，在Apache的配置文件中，还可以用AddCharset语句添加映射，如：
 
 
 
