@@ -23,7 +23,7 @@
 
 ### 1. 多后缀名 {#1多后缀名}
 
- Apache认为，一个文件可以有多个后缀，如：werner.txt.png.mp3。这一文件，放在Windows里，毫无疑问，就是个mp3文件，Windows只认最后一个“.”及其后面的字符“mp3”，觉得该文件后缀为“.mp3”，这也是大多数操作系统、应用软件的处理方式、是正常人习惯。
+Apache认为，一个文件可以有多个后缀，如：werner.txt.png.mp3。这一文件，放在Windows里，毫无疑问，就是个mp3文件，Windows只认最后一个“.”及其后面的字符“mp3”，觉得该文件后缀为“.mp3”，这也是大多数操作系统、应用软件的处理方式、是正常人习惯。
 
 而在Apache中，则可能有所不同，如果有必要，Apache会从后（右）往前（左），一一辨别后缀。当Apache不认识某个后缀时，如某文件名为：werner.mp3.html.qwe.arex，Apache在处理时，先读取最后一个后缀，为“.arex”，一看，这啥玩意啊，不认识，继续读取下一个后缀“.qwe”，一看，呀，这又是啥，还是不认识，继续读下一个后缀“.html”，一看，哦，这是个超文本标记语言文件，俗称网页文件，这回认识了，也就不继续读下一个后缀了。
 
@@ -51,5 +51,11 @@ DefaultType text/plain
 
 该文件是一个一对多的映射表，定义了某一种文件类型，对应的几种后缀。
 
-除了该文件，在Apache的配置文件中，还可以用AddCharset语句添加映射，如：
+![](/fileParser/image/apache-mime.png)
+
+除了该文件，在Apache的配置文件中，还可以用AddType语句添加映射，如：
+
+![](/fileParser/image/apache-add-mime.png)
+
+
 
