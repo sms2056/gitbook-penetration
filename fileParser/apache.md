@@ -76,16 +76,20 @@ DefaultType text/plain
 
 计算机世界自开天辟地以来，便自由多彩。还记得mime.types文件吗？在该文件中搜索“php”这三个字母，结果如下所示：
 
+```.asm
+╭─sms2056@sms2056-ThinkPad-T460 /etc
+╰─➤  cat /etc/mime.types | grep php
+#application/x-httpd-php                        phtml pht php
+#application/x-httpd-php-source                 phps
+#application/x-httpd-php3                       php3
+#application/x-httpd-php3-preprocessed          php3p
+#application/x-httpd-php4                       php4
+#application/x-httpd-php5                       php5
 ```
-╭─sms2056@sms2056-ThinkPad-T460 /etc                                                           │sms2056@sms2056-ThinkPad-T460 ~/Soft/FileZilla3/bin $ 
-╰─➤  cat /etc/mime.types | grep php                                                            │
-#application/x-httpd-php                        phtml pht php                                  │
-#application/x-httpd-php-source                 phps                                           │
-#application/x-httpd-php3                       php3                                           │
-#application/x-httpd-php3-preprocessed          php3p                                          │
-#application/x-httpd-php4                       php4                                           │
-#application/x-httpd-php5                       php5   
-```
+
+好吧，原来不仅php，就连phtml、pht、php3、php4和php5都是Apache和php认可的php程序的文件后缀。利用这些“罕见”的后缀名，也可能绕过安全检查，干些“坏事”。
+
+还是使用我们的test.php.aaa重命名为test.phtml,我们来看看是否能够错误执行
 
 
 
