@@ -4,7 +4,7 @@
 
 ## httpd.conf配置文件说明
 
-1. ##### ServerRoot
+##### 1. ServerRoot
 
 ![](/fileParser/image/apache-conf-1.jpg)
 
@@ -78,7 +78,19 @@
 
 此区域文件主要是针对Apache默认的日志级别，默认的访问日志路径，默认的错误日志路径等相关设置，此选项内容默认即可
 
-13. URL重定向，cgi模块配置说明
+##### 13. URL重定向，cgi模块配置说明
+
+![](/fileParser/image/apache-conf-13.jpg)
+
+![](/fileParser/image/apache-conf-14.jpg)
+
+![](/fileParser/image/apache-conf-15.jpg)
 
 此区域文件主要包含一些URL重定向，别名，脚本别名等相关设置，以及一些特定的处理程序，比如cgi设置说明
+
+14. MIME媒体文件，以及相关http文件解析配置说明
+
+![](/fileParser/image/apache-conf-16.jpg)
+
+此区域文件主要包含一些mime文件支持，以及添加一些指令在给定的文件扩展名与特定的内容类型之间建立映射关系，比如添加对php文件扩展名映射关系
 
