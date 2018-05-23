@@ -70,7 +70,22 @@ DefaultType text/plain
 ?>
 ```
 
-![](/fileParser/image/apache-testphp.png)
+![](/fileParser/image/apache-testphp.png)我们来做个实验。准备一个图片，内容随意，命名为test.jpg.aaa，放置在Apache中，然后在浏览器中访问它，结果如下图所示：![](/fileParser/image/apache-testjpg.png)可见浏览器是将该文件作为图片处理的。浏览器为何认为test.jpg.aaa是图片呢？aaa可不是图片文件的后缀。这是因为服务器的响应HTTP头中的Content-Type字段值为image/jpeg，浏览器看到image/jpeg，便知这是图片文件。这说明服务器（此处即Apache）是把test.jpg.aaa当做图片的，也说明，前面分析的Apache的多后缀处理是没有错的。
+
+### 2. 罕见后缀名 {#1多后缀名}
+
+计算机世界自开天辟地以来，便自由多彩。还记得mime.types文件吗？在该文件中搜索“php”这三个字母，结果如下所示：
+
+```
+╭─sms2056@sms2056-ThinkPad-T460 /etc                                                           │sms2056@sms2056-ThinkPad-T460 ~/Soft/FileZilla3/bin $ 
+╰─➤  cat /etc/mime.types | grep php                                                            │
+#application/x-httpd-php                        phtml pht php                                  │
+#application/x-httpd-php-source                 phps                                           │
+#application/x-httpd-php3                       php3                                           │
+#application/x-httpd-php3-preprocessed          php3p                                          │
+#application/x-httpd-php4                       php4                                           │
+#application/x-httpd-php5                       php5   
+```
 
 
 
