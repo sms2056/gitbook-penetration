@@ -121,5 +121,49 @@ ServerSignature On
 ServerTokens Full
 ```
 
-![](/fileParser/image/apache-sec_1.png)
+![](/fileParser/image/apache-sec_1.png)符号链接\(sysmbolic link\)文件是一个指向文件的指针,通过链接文件,用户访问的将会是指针所指向的文件.
+
+关于httpd.conf配置文件的介绍中提到了一个DocumentRoot的参数，该参数用于指定Web服务器发布文档的主目录。在默认情况下，用户通过http访问Web服务器所浏览到的所有资料都是存放于该目录之下。该参数只能设置一个目录作为参数值，那么是不是在Apache中就只能有一个目录存放文档文件呢？如果文档根目录空间不足，要把文件存放到其他的文件系统中去应该怎么办呢？
+
+符号链接
+
+![](/fileParser/image/apache-sec_2.png)
+
+虚拟目录
+
+```
+#使用Alias参数设置虚拟目录和实际目录的对应关系  
+Alias /log "/var/log"  
+#使用Directory段设置/var/log目录的访问属性  
+<Directory "/var/log"> 
+    Options Indexes MultiViews  
+    AllowOverride None  
+    order allow,deny  
+    Allow from all  
+</Directory> 
+```
+
+```
+# apache的默认web站点目录路径，结尾不要添加斜线
+DocumentRoot "/var/www/html"
+```
+
+我们通常利用Apache的rewrite模块对URL进行重写，rewrite规则会写在 .htaccess 文件里。但要使 apache 能够正常的读取.htaccess 文件的内容，就必须对.htaccess 所在目录进行配置。
+
+从安全性考虑，根目录的AllowOverride属性一般都配置成不允许任何Override
+
+```
+#行为对根目录的限制
+<Directory />
+    # followsymlinks表示允许使用符号链接，默认为禁用
+    Options FollowSymLinks
+    # 表示禁止用户对目录配置文件(.htaccess进行修改)重载，普通站点不建议开启
+    # AllowOverride从字面上解释是允许覆盖的意思
+    # 即Apache允许另一配置文件覆盖现有配置文件。
+    # FileInfo|Indexes|Limit|Options
+    AllowOverride None
+</Directory>
+```
+
+在 AllowOverride 设置为 None 时， .htaccess 文件将被完全忽略。当此指令设置为 All 时，所有具有 “.htaccess” 作用域的指令都允许出现在 .htaccess 文件中。
 
