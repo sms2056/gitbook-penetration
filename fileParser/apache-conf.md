@@ -115,7 +115,7 @@
 ## 二. 重要安全项
 
 ```
-# 用于设置页面信息,On|Off
+# 用于设置页面信息,On|Off|EMai 
 ServerSignature On
 # 用于设置服务器字段的信息, Minimal|ProductOnly|OS|Full 
 ServerTokens Full
