@@ -91,3 +91,33 @@ DefaultType text/plain
 
 还是使用我们的test.php.aaa重命名为test.phtml,我们来看看是否能够错误执行![](/fileParser/image/apache-php3.png)![](/fileParser/image/apache-php.png)错误执行成功.
 
+三. Apache的安全配置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
