@@ -2,7 +2,7 @@
 
 ---
 
-## httpd.conf配置文件说明
+## 一. httpd.conf配置文件说明
 
 ##### 1. ServerRoot
 
@@ -88,9 +88,37 @@
 
 此区域文件主要包含一些URL重定向，别名，脚本别名等相关设置，以及一些特定的处理程序，比如cgi设置说明
 
-14. MIME媒体文件，以及相关http文件解析配置说明
+##### 14. MIME媒体文件，以及相关http文件解析配置说明
 
 ![](/fileParser/image/apache-conf-16.jpg)
 
 此区域文件主要包含一些mime文件支持，以及添加一些指令在给定的文件扩展名与特定的内容类型之间建立映射关系，比如添加对php文件扩展名映射关系
+
+##### 15. 服务器页面提示设置
+
+![](/fileParser/image/apache-conf-17.jpg)
+
+此区域可定制的访问错误响应提示，支持三种方式：1明文 ，2本地重定向 3，外部重定向；另外还包括内存映射或“发送文件系统调用”可被用于分发文件等配置
+
+##### 16. Apache服务器补充设置
+
+![](/fileParser/image/apache-conf-18.jpg)
+
+此区域主要包括：服务器池管理，多语言错误消息，动态目录列表形式配置，语言设置，用户家庭目录，请求和配置上的实时信息，虚拟主机，Apache Http Server手册，分布式创作和版本控制，多种类默认设置，mod\_proxy\_html，使其支持HTML4/XHTML1等等补充配置的补充
+
+##### 17. Apache服务器安全连接设置
+
+![](/fileParser/image/apache-conf-19.jpg)
+
+此区域主要是关于服务器安全连接设置，用于使用https连接服务器等设置的地方
+
+## 二. 重要安全项
+
+```
+# 用于设置页面在没有
+ServerSignature On
+ServerTokens Full
+```
+
+
 
