@@ -140,7 +140,7 @@ Alias /log "/var/log"
     AllowOverride None  
     order allow,deny  
     Allow from all  
-</Directory> 
+</Directory>
 ```
 
 ```
@@ -156,7 +156,8 @@ DocumentRoot "/var/www/html"
 #行为对根目录的限制
 <Directory />
     # followsymlinks表示允许使用符号链接，默认为禁用
-    Options FollowSymLinks
+    # 在Indexes前，加 + 代表允许目录浏览；加 – 代表禁止目录浏览
+    Options Indexes FollowSymLinks
     # 表示禁止用户对目录配置文件(.htaccess进行修改)重载，普通站点不建议开启
     # AllowOverride从字面上解释是允许覆盖的意思
     # 即Apache允许另一配置文件覆盖现有配置文件。
@@ -166,4 +167,22 @@ DocumentRoot "/var/www/html"
 ```
 
 在 AllowOverride 设置为 None 时， .htaccess 文件将被完全忽略。当此指令设置为 All 时，所有具有 “.htaccess” 作用域的指令都允许出现在 .htaccess 文件中。
+
+```
+Require all granted #允许所有
+Require all denied #拒绝所有
+Require env env-var [env-var] ... #允许匹配环境变量中任意一个
+# 允许特定的HTTP方法（GET/POST/HEAD/OPTIONS）
+Require method http-method [http-method] ... 
+Require expr expression #允许，表达式为true
+Require user userid [ userid ] ... #允许特定用户
+Require group group-name [group-name] ... #允许特定用户组
+Require valid-user # #允许，有效用户
+# 允许特定IP或IP段，多个IP或IP段间使用空格分隔
+Require ip 192.100 192.168.100 192.168.100.5
+```
+
+
+
+
 
