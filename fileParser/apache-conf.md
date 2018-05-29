@@ -115,10 +115,11 @@
 ## 二. 重要安全项
 
 ```
-# 用于设置页面在没有
+# 用于设置页面信息,On|Off
 ServerSignature On
+# 用于设置服务器字段的信息, Minimal|ProductOnly|OS|Full 
 ServerTokens Full
 ```
 
-
+![](/fileParser/image/apache-sec_1.png)
 
