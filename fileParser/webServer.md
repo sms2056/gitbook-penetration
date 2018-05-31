@@ -70,7 +70,7 @@ location / {
 # 去除#并修改root和fastcgi_param
 # location 正则匹配到以php结尾的到这里解析
 location ~ \.php$ {
-    # root   html;        --> 这里改成你自己的目录
+    # root   html;        --> 这里改成你自己的html文件目录
     root           C:/wnmp/www;
     # 指明了用哪里的php-fpm来解析
     fastcgi_pass   127.0.0.1:9000;
