@@ -73,6 +73,8 @@ location ~ \.php$ {
     root           C:/wamp/www;
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
+    
+    # /scripts修改为$document_root$,指向web文件目录
     # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     include        fastcgi_params;
