@@ -49,7 +49,7 @@ listen       900;
 ```
 # 45行左右
 location / {
-    # root   html;         --> 这里改成你自己的目录
+    # root   html;         --> 这里改成你自己的html文件目录
     root   C:/wnmp/www;
     # index  index.html index.htm;
     index  index.html index.htm index.php;
@@ -148,8 +148,6 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 **测试Nginx+php是否成功**
 
-
-
 ### VI MySQL的使用
 
 由于使用了WAMPserver自带的MySQL,直接启动WAMPserver即可
@@ -157,6 +155,4 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 ### V 联合启动
 
 下载
-
-
 
