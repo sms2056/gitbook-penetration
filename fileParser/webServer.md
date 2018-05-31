@@ -170,12 +170,12 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 <?php
     $link = mysql_connect("localhost","root","");
     if($link)
-	{
-	    echo "connect ok";
-	}else
-	{
-	    echo "connect error";
-	}
+    {
+        echo "connect ok";
+    }else
+    {
+        echo "connect error";
+    }
 ?>
 ```
 
@@ -189,7 +189,6 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 3. 创建start.bat文件
 
-```
     @echo off
     REM Windows 下无效
     REM set PHP_FCGI_CHILDREN=5
@@ -203,9 +202,8 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
     # -p 指向nginx目录,不要添加`/`
     # -c 为 nginx 的配置文件
     RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
-```
 
-4. 创建stop.bat文件
+1. 创建stop.bat文件
 
 ```
 @echo off
@@ -216,11 +214,11 @@ taskkill /F /IM php-cgi.exe > nul
 exit
 ```
 
-5. 双击start.bat启动服务
+1. 双击start.bat启动服务
 
 ![](/fileParser/image/server-pro.png)
 
-6. 双击stop.bat结束进程
+1. 双击stop.bat结束进程
 
 ### IV. phpMyAdmin安装与配置
 
@@ -250,15 +248,13 @@ $cfg['Servers'][$i]['password'] = '';
 $cfg['Servers'][$i]['nopassword'] = false;
 ```
 
-e. 查看配置是否成功,浏览http://127.0.0.1:900
+e. 查看配置是否成功,浏览[http://127.0.0.1:900](http://127.0.0.1:900)
 
 ![](/fileParser/image/phpmyadmin_1.png)![](/fileParser/image/phpmyadmin_2.png)
 
 ---
 
 ## Nginx + FCGI运行原理
-
-
 
 
 
