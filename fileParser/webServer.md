@@ -148,6 +148,16 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 **测试Nginx+php是否成功**
 
+在C:/wnmp/www目录创建phpinfo.php文件,文件内容为 
+
+```
+<?php
+    phpinfo();
+?>
+```
+
+![](/fileParser/image/nginxANDphp.png)
+
 ### VI MySQL的使用
 
 由于使用了WAMPserver自带的MySQL,直接启动WAMPserver即可
