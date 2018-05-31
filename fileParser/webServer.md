@@ -26,11 +26,55 @@
 
 ### I. Nginx 安装
 
-1. 准备一个目录， 我这里是 `c:\wnmp\nginx`（这里nginx目录下主要是为了以后方便拓展多版本的Nginx服务）
+1. 准备一个目录， 我这里是 `c:\wnmp\nginx`（这里nginx目录下主要是为了以后方便拓展多版本的Nginx服务）
 
-2. 运行该文件夹（nginx-1.10.3）下的nginx.exe
+2. 解压下载的Nginx文件到上面所说目录
 
-3.测试是否启动nginx。打开浏览器访问http://localhost 或http://127.0.0.1，看看是否出现“Welcome to nginx!”，出现的证明已经启动成功了。没有启动的话，看看80端口有占用没。
+3. 运行该文件夹下的nginx.exe
 
-注意：该网站的默认目录在 E:\development\nginx\nginx-1.10.3\html 
+4. 测试是否启动nginx。打开浏览器访问[http://localhost](http://localhost) 或[http://127.0.0.1](http://127.0.0.1，看看是否出现“Welcome)![](/fileParser/image/niginx-1.png)出现“Welcome to nginx!”，出现的证明已经启动成功了,没有启动的话，查看80端口是否被占用。   注意：该网站的默认目录在 E:\development\nginx\nginx-1.10.3\html
+
+### II. 对Nginx进行配置
+
+nginx配置文件是`C:\WNMP\nginx\conf`文件夹里的nginx.conf
+
+1. 修改大概第37行的监听端口
+
+2. ```
+   listen       900;
+   ```
+
+   2 . 修改html文件和PHP文件路径
+
+```
+location / {
+    # root   html;
+    root   C:/wamp/www;
+    # index  index.html index.htm;
+    index  index.html index.htm index.php;
+}
+```
+
+```
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#
+#location ~ \.php$ {
+#    root           html;
+#    fastcgi_pass   127.0.0.1:9000;
+#    fastcgi_index  index.php;
+#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+#    include        fastcgi_params;
+#}
+
+location ~ \.php$ {
+    root           C:/wamp/www;
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+```
+
+
 
