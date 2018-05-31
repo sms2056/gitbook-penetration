@@ -34,7 +34,7 @@
 
 4. 测试是否启动nginx。打开浏览器访问[http://localhost](http://localhost) 或[http://127.0.0.1](http://127.0.0.1，看看是否出现“Welcome)![](/fileParser/image/niginx-1.png)出现“Welcome to nginx!”，出现的证明已经启动成功了,没有启动的话，查看80端口是否被占用。   注意：该网站的默认目录在 E:\development\nginx\nginx-1.10.3\html
 
-### II. 对Nginx进行配置
+### II. 对Nginx进行支持CGI的配置
 
 nginx配置文件是`C:\WNMP\nginx\conf`文件夹里的nginx.conf
 
@@ -141,8 +141,16 @@ location ~ \.php$ {
 **D. **启动php-cgi
 
 ```
-php-cgi.exe -b 127.0.0.1:9000-c
+C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 ```
+
+### VI MySQL的使用
+
+由于使用了WAMPserver自带的MySQL
+
+|  |
+| :--- |
+
 
 
 
