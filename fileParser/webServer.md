@@ -38,17 +38,18 @@
 
 nginx配置文件是`C:\WNMP\nginx\conf`文件夹里的nginx.conf
 
-1. 修改大概第37行的监听端口
-
-2. ```
-   listen       900;
-   ```
-
-   2 . 修改html文件和PHP文件路径
+**修改大概第37行的监听端口**
 
 ```
+listen       900;
+```
+
+**修改html文件和PHP文件路径**
+
+```
+# 45行左右
 location / {
-    # root   html;
+    # root   html;         --> 这里改成你自己的目录
     root   C:/wamp/www;
     # index  index.html index.htm;
     index  index.html index.htm index.php;
@@ -56,6 +57,7 @@ location / {
 ```
 
 ```
+# 67行左右
 # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
 #
 #location ~ \.php$ {
@@ -65,8 +67,9 @@ location / {
 #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
 #    include        fastcgi_params;
 #}
-
+# 去除#并修改root和fastcgi_param
 location ~ \.php$ {
+    # root   html;
     root           C:/wamp/www;
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
