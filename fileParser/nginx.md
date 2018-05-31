@@ -168,5 +168,3 @@ location /protected/ {
 
 成功访问到文件s.html。注意上示URL中的空格，不要将空格编码。
 
-
-
