@@ -266,8 +266,8 @@ e. 查看配置是否成功,浏览[http://127.0.0.1:900](http://127.0.0.1:900)
 #### what's FastCGi {#whats-fastcgi}
 
 FastCGI是一个可伸缩，高速的在HTTP server和动态脚本语言间通信的接口。FastCGI支持多种脚本语言和HTTP server。  
-  FCGI是由CGI发展改进而来的。传统的CGI接口方式的性能很差。每次HTTP服务器遇到动态程序时都需要重新启动脚本解释器来执行解析，然后将结果返回给HTTP服务器，这在处理高并发访问时几乎是不可用的。另外传统的CGI接口方式安全性也很差，现在很少使用了。  
-  FCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解释器分开，同时在脚本解释器上启动一个或者多个脚本解释器守护进程。当HTTP服务器遇到动态程序时，可以将其直接交付给FCGI进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一的处理静态请求或者动态脚本的结果返回给客户端，这就很大程度上提高了响应速度。
+FCGI是由CGI发展改进而来的。传统的CGI接口方式的性能很差。每次HTTP服务器遇到动态程序时都需要重新启动脚本解释器来执行解析，然后将结果返回给HTTP服务器，这在处理高并发访问时几乎是不可用的。另外传统的CGI接口方式安全性也很差，现在很少使用了。  
+FCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解释器分开，同时在脚本解释器上启动一个或者多个脚本解释器守护进程。当HTTP服务器遇到动态程序时，可以将其直接交付给FCGI进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一的处理静态请求或者动态脚本的结果返回给客户端，这就很大程度上提高了响应速度。
 
 #### Nginx + FCGI运行原理 {#nginx-fcgi运行原理}
 
@@ -277,10 +277,9 @@ Nginx 不支持对外部程序的直接调用或者解析，所有的外部程�
 
 #### spawn-fcgi 和 php-fpm {#spawn-fcgi-和-php-fpm}
 
-  FCGI接口方式在脚本解析服务器上启动一个或者多个守护进程对动态脚本进行解析，这些进程就是FastCGI进程管理器，或者称为fastCgi引擎，spawn-fcgi 和 PHP-FPM就是支持php的两个Fcgi进程管理器。  
-  span-fcgi是HTTP服务器lighttpd的一部分，目前是独立的一个项目，一般与lighttpd配合使用来支持PHP，但是lighttpd的spwan-fcgi在高并发访问的时候，会出现内存泄漏甚至自动重启FastCGI的问题  
-  Nginx是个轻量级的HTTPserver，必须借助第三方的FCGI处理器才可以对PHP进行解析。  
-  PHP-FPM是一个第三方的FCGI进程管理器，它是PHP的一个补丁来开发的，在安装的时候也需要和PHP源码一起编译，也就是说PHP-FPM被编译到PHP内核中，因此处理性能方面更加优秀，同事PHP-FPM在处理高并发方面也比spawn-fcgi引擎好很多，所以推荐NGINX+PHP-FPM组合。
-
-  FCGI的主要优点是把动态语言和HTTP server分离开来，所以Nginx 与 php、php-fpm经常被部署在不同的服务器上，以分担前端Nginx的服务器压力，让nginx 专一处理静态请求和转发动态请求。而PHP、PHP-fpm服务器专一解析PHP动态请求。
+FCGI接口方式在脚本解析服务器上启动一个或者多个守护进程对动态脚本进行解析，这些进程就是FastCGI进程管理器，或者称为fastCgi引擎，spawn-fcgi 和 PHP-FPM就是支持php的两个Fcgi进程管理器。  
+span-fcgi是HTTP服务器lighttpd的一部分，目前是独立的一个项目，一般与lighttpd配合使用来支持PHP，但是lighttpd的spwan-fcgi在高并发访问的时候，会出现内存泄漏甚至自动重启FastCGI的问题  
+Nginx是个轻量级的HTTPserver，必须借助第三方的FCGI处理器才可以对PHP进行解析。  
+PHP-FPM是一个第三方的FCGI进程管理器，它是PHP的一个补丁来开发的，在安装的时候也需要和PHP源码一起编译，也就是说PHP-FPM被编译到PHP内核中，因此处理性能方面更加优秀，同事PHP-FPM在处理高并发方面也比spawn-fcgi引擎好很多，所以推荐NGINX+PHP-FPM组合。
+FCGI的主要优点是把动态语言和HTTP server分离开来，所以Nginx 与 php、php-fpm经常被部署在不同的服务器上，以分担前端Nginx的服务器压力，让nginx 专一处理静态请求和转发动态请求。而PHP、PHP-fpm服务器专一解析PHP动态请求。
 
