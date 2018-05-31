@@ -86,7 +86,7 @@ location ~ \.php$ {
 
 启动Nginx或重启Nginx
 
-### III PHP安装及配置
+### III. PHP安装及配置
 
 **A. **创建一个PHP目录 E:\wnmp\php\(将下好的php解压到这里\)
 
@@ -158,13 +158,104 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 ![](/fileParser/image/nginxANDphp.png)
 
-### VI MySQL的使用
+### VI. MySQL的使用
 
 由于使用了WAMPserver自带的MySQL,直接启动WAMPserver即可
 
 **测试Nginx+php+mysql是否成功**
 
+在C:/wnmp/www目录创建mysql.php文件,文件内容为
+
+```php
+<?php
+    $link = mysql_connect("localhost","root","");
+    if($link)
+	{
+	    echo "connect ok";
+	}else
+	{
+	    echo "connect error";
+	}
+?>
+```
+
+![](/fileParser/image/nginxANDphpANDmysql.png)
+
 ### V 联合启动
 
-下载
+1. 下载[RunHiddenConsole](http://www.inbeijing.org/wp-content/uploads/2015/06/RunHiddenConsole.zip)
+
+2. 将RunHiddenConsole解压到`c:\wnmp`目录
+
+3. 创建start.bat文件
+
+    @echo off
+    REM Windows 下无效
+    REM set PHP_FCGI_CHILDREN=5
+    REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
+    set PHP_FCGI_MAX_REQUESTS=1000
+
+    echo Starting PHP FastCGI...
+    RunHiddenConsole C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
+
+    echo Starting nginx...
+    # -p 指向nginx目录,不要添加`/`
+    RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
+
+4. 创建stop.bat文件
+
+```
+@echo off
+echo Stopping nginx...  
+taskkill /F /IM nginx.exe > nul
+echo Stopping PHP FastCGI...
+taskkill /F /IM php-cgi.exe > nul
+exit
+```
+
+5. 双击start.bat启动服务
+
+![](/fileParser/image/server-pro.png)
+
+6. 双击stop.bat结束进程
+
+### IV. phpMyAdmin安装与配置
+
+a. 将下载好的phpMyAdmin解压到`C:/wnmp/www/phpmyadmin`
+
+b. 将`C:/wnmp/www/phpmyadmin`中的`config.simple.inc.php`重命名为`config.inc.php`
+
+c. 修改`config.inc.php文件`
+
+```
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+修改为
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
+```
+
+d. 修改`C:\wnmp\www\phpMyAdmin\libraries`文件夹中的`config.default.php`
+
+```
+# 默认不动,或填写'localhost'
+$cfg['Servers'][$i]['host'] = 'localhost';
+
+# 填写Mysql的用户名和密码
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '';
+
+# 设置允许空密码登录
+$cfg['Servers'][$i]['nopassword'] = false;
+```
+
+e. 查看配置是否成功,浏览http://127.0.0.1:900
+
+![](/fileParser/image/phpmyadmin_1.png)![](/fileParser/image/phpmyadmin_2.png)
+
+---
+
+## Nginx + FCGI运行原理
+
+
+
+
 
