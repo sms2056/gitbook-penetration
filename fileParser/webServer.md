@@ -162,6 +162,8 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 由于使用了WAMPserver自带的MySQL,直接启动WAMPserver即可
 
+**测试Nginx+php+mysql是否成功**
+
 ### V 联合启动
 
 下载
