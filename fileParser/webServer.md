@@ -68,14 +68,17 @@ location / {
 #    include        fastcgi_params;
 #}
 # 去除#并修改root和fastcgi_param
+# location 正则匹配到以php结尾的到这里解析
 location ~ \.php$ {
     # root   html;        --> 这里改成你自己的目录
     root           C:/wamp/www;
+    # 指明了用哪里的php-fpm来解析
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
 
     # /scripts修改为$document_root$,指向web文件目录
     # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    # 指明的是php动态程序的主目录
     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     include        fastcgi_params;
 }
@@ -83,17 +86,17 @@ location ~ \.php$ {
 
 ### III PHP安装及配置
 
-1. 创建一个PHP目录 E:\wnmp\php\(将下好的php解压到这里\)
+**A. **创建一个PHP目录 E:\wnmp\php\(将下好的php解压到这里\)
 
-2. 将php.ini-development或php.ini-production重命名为php.ini
+**B. **将php.ini-development或php.ini-production重命名为php.ini
 
-3. 修改php.ini
+**C. **修改php.ini
 
 搜索“extension\_dir”找到: `;xtension_dir = "ext"`
 
 > 先去前面的分号再改为extension\_dir = "C:\wnmp\php\ext"
 
-搜索“php\_mysql”找到:`”extension=php_pdo_mysql.dll`和`extension=php_mysqli.dll` 
+搜索“php\_mysql”找到:`”extension=php_pdo_mysql.dll`和`extension=php_mysqli.dll`
 
 > 去掉前面的“;”extension=php\_mysql.dll和extension=php\_mysqli.dll
 
@@ -109,23 +112,25 @@ location ~ \.php$ {
 
 > 将前面的分号去掉为`cgi.fix_pathinfo=1`
 
-搜索“date.timezone”找到:`;date.timezone =` 
+---
+
+搜索“date.timezone”找到:`;date.timezone =`
 
 > 先去前面的分号再改为 date.timezone = Asia/Shanghai
 
-搜索“enable\_dl”，找到:`enable_dl = Off` 
+搜索“enable\_dl”，找到:`enable_dl = Off`
 
-> 改为 enable\_dl = On
+> 改为 enable\_dl = On
 
-搜索“cgi.force\_redirect”找到:`;cgi.force_redirect = 1` 
+搜索“cgi.force\_redirect”找到:`;cgi.force_redirect = 1`
 
 > 先去前面的分号再改为 cgi.force\_redirect = 0
 
-搜索“fastcgi.impersonate”找到:`;fastcgi.impersonate = 1` 
+搜索“fastcgi.impersonate”找到:`;fastcgi.impersonate = 1`
 
 > 去掉前面的分号
 
-搜索“cgi.rfc2616\_headers”找到:`;cgi.rfc2616_headers = 0` 
+搜索“cgi.rfc2616\_headers”找到:`;cgi.rfc2616_headers = 0`
 
 > 先去前面的分号再改为 cgi.rfc2616\_headers = 1
 
@@ -133,9 +138,11 @@ location ~ \.php$ {
 
 > 将前面的分号去掉为`extension=php_gd2.dll`
 
+**D. **启动php-cgi
 
-
-
+```
+php-cgi.exe -b 127.0.0.1:9000-c
+```
 
 
 
