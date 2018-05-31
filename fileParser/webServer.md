@@ -189,22 +189,21 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 3. 创建start.bat文件
 
-   @echo off  
-    REM Windows 下无效  
-    REM set PHP\_FCGI\_CHILDREN=5  
-    REM 每个进程处理的最大请求数，或设置为 Windows 环境变量  
-    set PHP\_FCGI\_MAX\_REQUESTS=1000
+```
+@echo off  
+REM Windows 下无效  
+REM set PHP\_FCGI\_CHILDREN=5  
+REM 每个进程处理的最大请求数，或设置为 Windows 环境变量  
+set PHP\_FCGI\_MAX\_REQUESTS=1000
 
-   echo Starting PHP FastCGI...  
-    RunHiddenConsole C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
+echo Starting PHP FastCGI...  
+RunHiddenConsole C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
-   echo Starting nginx...
-
-   # -p 指向nginx目录,不要添加`/`
-
-   # -c 为 nginx 的配置文件
-
-   RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
+echo Starting nginx...
+# -p 指向nginx目录,不要添加`/`
+# -c 为 nginx 的配置文件
+RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
+```
 
 4. 创建stop.bat文件
 
