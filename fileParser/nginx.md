@@ -164,7 +164,7 @@ location /protected/ {
 
 返回“403 Forbidden”。利用漏洞访问：
 
-> [http://127.0.0.1/test](http://127.0.0.1/test) /../protected/s.html
+> http://127.0.0.1/test /../protected/s.html
 
 成功访问到文件s.html。注意上示URL中的空格，不要将空格编码。
 
