@@ -275,7 +275,6 @@ Nginx 不支持对外部程序的直接调用或者解析，所有的外部程�
 ![](/fileParser/image/cgi-1.png)
 
 #### spawn-fcgi 和 php-fpm {#spawn-fcgi-和-php-fpm}
-
 FCGI接口方式在脚本解析服务器上启动一个或者多个守护进程对动态脚本进行解析，这些进程就是FastCGI进程管理器，或者称为fastCgi引擎，spawn-fcgi 和 PHP-FPM就是支持php的两个Fcgi进程管理器。  
 span-fcgi是HTTP服务器lighttpd的一部分，目前是独立的一个项目，一般与lighttpd配合使用来支持PHP，但是lighttpd的spwan-fcgi在高并发访问的时候，会出现内存泄漏甚至自动重启FastCGI的问题  
 Nginx是个轻量级的HTTPserver，必须借助第三方的FCGI处理器才可以对PHP进行解析。  
