@@ -189,21 +189,19 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 3. 创建start.bat文件
 
-```
-@echo off
-REM Windows 下无效
-REM set PHP_FCGI_CHILDREN=5
-REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
-set PHP_FCGI_MAX_REQUESTS=1000
+    @echo off
+    REM Windows 下无效
+    REM set PHP_FCGI_CHILDREN=5
+    REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
+    set PHP_FCGI_MAX_REQUESTS=1000
 
-echo Starting PHP FastCGI...
-RunHiddenConsole C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
+    echo Starting PHP FastCGI...
+    RunHiddenConsole C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
-echo Starting nginx...
-# -p 指向nginx目录,不要添加`/`
-# -c 为 nginx 的配置文件
-RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
-```
+    echo Starting nginx...
+    # -p 指向nginx目录,不要添加`/`
+    # -c 为 nginx 的配置文件
+    RunHiddenConsole C:/WNMP/nginx/nginx.exe -p C:/WNMP/nginx
 
 1. 创建stop.bat文件
 
@@ -257,6 +255,20 @@ e. 查看配置是否成功,浏览[http://127.0.0.1:900](http://127.0.0.1:900)
 ---
 
 ## Nginx + FCGI运行原理
+
+### preface {#preface}
+
+  公司所有的大多数业务都泡在LNMP平台上，所以对PHP+Nginx有点了解，那么就做个小小的总结吧。
+
+#### what's FastCGi {#whats-fastcgi}
+
+  FastCGI是一个可伸缩，高速的在HTTP server和动态脚本语言间通信的接口。FastCGI支持多种脚本语言和HTTP server。  
+  FCGI是由CGI发展改进而来的。传统的CGI接口方式的性能很差。每次HTTP服务器遇到动态程序时都需要重新启动脚本解释器来执行解析，然后将结果返回给HTTP服务器，这在处理高并发访问时几乎是不可用的。另外传统的CGI接口方式安全性也很差，现在很少使用了。  
+  FCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解释器分开，同时在脚本解释器上启动一个或者多个脚本解释器守护进程。当HTTP服务器遇到动态程序时，可以将其直接交付给FCGI进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一的处理静态请求或者动态脚本的结果返回给客户端，这就很大程度上提高了响应速度。
+
+#### Nginx + FCGI运行原理 {#nginx-fcgi运行原理}
+
+  Nginx 不支持对外部程序的直接调用或者解析，所有的外部程序（包括PHP）必须通过FCGI接口来调用。FCGI接口在linux是socket（这个socket是文件socket，也可以是ip socket）。为了调用CGI程序，还需要一个FCGI的wrapper（wrapper可以理解为启动另一个程序的程序）。这个wrapper绑定在某个固定的socket上，如端口或者文件的socket，当Nginx将cgi请求发送给这个socket的时候，通过FCGI接口，wrapper接收到请求，然后派生出一个新的线程，这个线程调用解释器或者外部程序处理脚本并读取数据，接着，wrapper将返回的数据通过FCGi接口，沿着固定的socket传给Nginx，最终，NGinx将返回的数据发送给客户端，这就是Nginx+FCGi的运行流程。如图所示：
 
 
 
