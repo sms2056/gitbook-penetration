@@ -116,7 +116,7 @@ Nginx拿到文件路径（更专业的说法是URI）`/test.jpg/test.php`后，�
 
 这一漏洞的原理是非法字符空格和截止符（\0）会导致Nginx解析URI时的有限状态机混乱，危害是允许攻击者通过一个非编码空格绕过后缀名限制。是什么意思呢？举个例子，假设服务器上存在文件：“file.aaa ”，注意文件名的最后一个字符是空格。则可以通过访问：
 
-> http://127.0.0.1/file.aaa \0.bbb
+> [http://127.0.0.1/file.aaa](http://127.0.0.1/file.aaa) \0.bbb
 
 让Nginx认为文件“file.aaa ”的后缀为“.bbb”。
 
@@ -147,6 +147,26 @@ Nginx拿到文件路径（更专业的说法是URI）`/test.jpg/test.php`后，�
 > FastCGI sent in stderr: "Access to the script '/usr/local/nginx/html/test.jpg '
 
 这说明Nginx在接收到这一请求后，确实把文件“test.jpg ”当做php文件交给php去执行了，只是php看到该文件后缀为“.jpg ”而拒绝执行。这样，便验证了Nginx确实存在该漏洞。
+
+**CVE-2013-4547还可以用于绕过访问限制**
+
+首先在网站根目录下新建一个目录，命名为protected，在目录protected中新建文件s.html，内容随意。然后在Nginx的配置文件中写上：
+
+```
+location /protected/ {
+    deny all;
+  }
+```
+
+以禁止该目录的访问。接着在网站根目录下新建一个目录，名为“test ”，目录名的最后一个字符是空格，该目录用于触发漏洞。最后来进行验证，直接访问：
+
+> http://127.0.0.1/protected/s.html
+
+返回“403 Forbidden”。利用漏洞访问：
+
+> http://127.0.0.1/test /../protected/s.html
+
+成功访问到文件s.html。注意上示URL中的空格，不要将空格编码。
 
 
 
