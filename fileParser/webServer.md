@@ -73,13 +73,69 @@ location ~ \.php$ {
     root           C:/wamp/www;
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
-    
+
     # /scripts修改为$document_root$,指向web文件目录
     # fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     include        fastcgi_params;
 }
 ```
+
+### III PHP安装及配置
+
+1. 创建一个PHP目录 E:\wnmp\php\(将下好的php解压到这里\)
+
+2. 将php.ini-development或php.ini-production重命名为php.ini
+
+3. 修改php.ini
+
+搜索“extension\_dir”找到: `;xtension_dir = "ext"`
+
+> 先去前面的分号再改为extension\_dir = "C:\wnmp\php\ext"
+
+搜索“php\_mysql”找到:`”extension=php_pdo_mysql.dll`和`extension=php_mysqli.dll` 
+
+> 去掉前面的“;”extension=php\_mysql.dll和extension=php\_mysqli.dll
+
+查找定位至`;extension=php_pdo_mysql.dll`，
+
+> 将前面的分号去掉为`extension=php_pdo_mysql.dll`
+
+查找定位至`;extension=php_mbstring.dll`
+
+> 将前面的分号去掉为`extension=php_mbstring.dll`
+
+查找定位至`;cgi.fix_pathinfo=1`，
+
+> 将前面的分号去掉为`cgi.fix_pathinfo=1`
+
+搜索“date.timezone”找到:`;date.timezone =` 
+
+> 先去前面的分号再改为 date.timezone = Asia/Shanghai
+
+搜索“enable\_dl”，找到:`enable_dl = Off` 
+
+> 改为 enable\_dl = On
+
+搜索“cgi.force\_redirect”找到:`;cgi.force_redirect = 1` 
+
+> 先去前面的分号再改为 cgi.force\_redirect = 0
+
+搜索“fastcgi.impersonate”找到:`;fastcgi.impersonate = 1` 
+
+> 去掉前面的分号
+
+搜索“cgi.rfc2616\_headers”找到:`;cgi.rfc2616_headers = 0` 
+
+> 先去前面的分号再改为 cgi.rfc2616\_headers = 1
+
+查找定位至`;extension=php_gd2.dll`
+
+> 将前面的分号去掉为`extension=php_gd2.dll`
+
+
+
+
 
 
 
