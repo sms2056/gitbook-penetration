@@ -69,7 +69,7 @@ location / {
 #}
 # 去除#并修改root和fastcgi_param
 location ~ \.php$ {
-    # root   html;
+    # root   html;        --> 这里改成你自己的目录
     root           C:/wamp/www;
     fastcgi_pass   127.0.0.1:9000;
     fastcgi_index  index.php;
