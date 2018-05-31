@@ -148,9 +148,9 @@ C:/WNMP/php/php-cgi.exe -b 127.0.0.1:9000 -c c:\WNMP\php\php.ini
 
 **测试Nginx+php是否成功**
 
-在C:/wnmp/www目录创建phpinfo.php文件,文件内容为 
+在C:/wnmp/www目录创建phpinfo.php文件,文件内容为
 
-```
+```php
 <?php
     phpinfo();
 ?>
