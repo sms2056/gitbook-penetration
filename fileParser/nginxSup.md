@@ -1,4 +1,7 @@
 # Nginx解析漏洞-补充
+
+---
+
 ## 一. %00截断
 
 漏洞版本:
@@ -65,12 +68,11 @@ location /protected/ {
 
 以禁止该目录的访问。接着在网站根目录下新建一个目录，名为“test ”，目录名的最后一个字符是空格，该目录用于触发漏洞。最后来进行验证，直接访问：
 
-> http://127.0.0.1/protected/s.html
+> [http://127.0.0.1/protected/s.html](http://127.0.0.1/protected/s.html)
 
 返回“403 Forbidden”。利用漏洞访问：
 
-> http://127.0.0.1/test /../protected/s.html
+> [http://127.0.0.1/test](http://127.0.0.1/test) /../protected/s.html
 
 成功访问到文件s.html。注意上示URL中的空格，不要将空格编码。
-
 
