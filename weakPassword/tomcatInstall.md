@@ -87,13 +87,13 @@ b\). Manager权限设置\(tomcat-users.xml\)
   <role rolename="manager-jmx"/>
   <role rolename="manager-script"/>
   <role rolename="manager-gui"/>
-  //==========================>
+  //==========================以下默认存在
   <role rolename="tomcat"/>
   <role rolename="role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="tomcat" password="tomcat" roles="tomcat"/>
-  //==========================<
+  //==========================以上默认存在
   //add
   <user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
 </tomcat-users>
