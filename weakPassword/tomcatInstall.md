@@ -51,7 +51,7 @@ c\).**运行方式一**:服务方式
 
 在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-在浏览器地址栏输入“[http://localhost:8080”出现以下画面即使安装成功了!\[\]\(/weakPassword/image/tomcat\_3.png\)d\](http://localhost:8080”出现以下画面即使安装成功了![]%28/weakPassword/image/tomcat_3.png%29d\)\). **运行方式二**: 批处理命令\(推荐\)
+在浏览器地址栏输入“[http://localhost:8080”出现以下画面即使安装成功了!\[\]\(/weakPassword/image/tomcat\_3.png\)d\](http://localhost:8080”出现以下画面即使安装成功了![]%28/weakPassword/image/tomcat_3.png%29d%29%29. **运行方式二**: 批处理命令%28推荐\)
 
 进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
 
@@ -87,17 +87,17 @@ b\). Manager权限设置\(tomcat-users.xml\)
   <role rolename="manager-jmx"/>
   <role rolename="manager-script"/>
   <role rolename="manager-gui"/>
+  //==========================>
   <role rolename="tomcat"/>
   <role rolename="role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="tomcat" password="tomcat" roles="tomcat"/>
+  //==========================<
   //add
   <user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
 </tomcat-users>
 ```
 
 c\). 上传文件大小设置
-
-
 
