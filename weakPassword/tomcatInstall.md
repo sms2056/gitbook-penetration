@@ -51,7 +51,9 @@ c\).**运行方式一**:服务方式
 
 在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-在浏览器地址栏输入“http://localhost:8080”出现以下画面即使安装成功了!![](/weakPassword/image/tomcat_3.png)
+在浏览器地址栏输入“http://localhost:8080”出现以下画面即使安装成功了!!
+
+![](/weakPassword/image/tomcat_3.png)
 
 进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
 
@@ -126,7 +128,7 @@ Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script�
 
 c\). 上传文件大小设置\(server.xml\)
 
-tomcat目录下的conf文件夹下，server.xml 文件中以下的位置中添加maxPostSize参数
+tomcat目录下的conf文件夹下，server.xml 文件中以下的位置中添加maxPostSize参数
 
 ```html
 <Connector port="8081"    
@@ -134,7 +136,7 @@ tomcat目录下的conf文件夹下，server.xml 文件中以下的位置中添�
                enableLookups="false" redirectPort="8443" acceptCount="100"    
                debug="0" connectionTimeout="20000"     
                disableUploadTimeout="true" URIEncoding="utf-8"    
-               maxPostSize="0"/>    
+               maxPostSize="0"/>
 ```
 
 
