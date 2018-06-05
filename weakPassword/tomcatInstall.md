@@ -1,2 +1,59 @@
-# 1. tomcat安装配置
+# tomcat安装配置
+
+![](/weakPassword/image/tomcat-logo.png)
+
+---
+
+## 一. 实验环境
+
+| 软件名称 | 软件版本 |
+| :--- | :--- |
+| Windows | windows server 2008 |
+| JDK | jdk-7u80-windows-i586 |
+| tomcat | 4~9都可以 |
+
+## 二. 安装步骤
+
+### I.JDK安装与环境配置
+
+a\). 将下载的`jdk-7u80-windows-i586.exe`进行安装,直接下一步,下一步就OK
+
+b\). 默认安装在`C:\Program Files\Java\`文件夹下
+
+c\). 设置java环境变量
+
+> 我的电脑 --&gt; 右键 --&gt; 属性 --&gt; 高级系统设置 --&gt; 环境变量
+
+```
+JAVA_HOME：C:\Program Files\Java\jdk;      //jdk安装路径，到bin上一层。
+CLASSPATH：%JAVA_HOME%\lib\tools.jar;
+Path：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+```
+
+> 在cmd下运行`“Java”、“javac”、“Java -version”`，如果安装成功，则不会出现错误提示信息
+
+![](/weakPassword/image/tomcat_1.png)
+
+### II.tomcat安装
+
+a\). 下载tomcat后解压到自己想要安装的位置
+
+b\). 同Java环境变量的配置，新建以下四个变量（已存在则进行编辑）：
+
+```
+TOMCAT_HOME    ：C:\Program Files\tomcat　　//tomcat安装路径，到bin上一层。
+CATALINA_HOME  ：C:\Program Files\tomcat　　//同上
+Path：          %CATALINA_HOME%\bin
+CLASSPATH：     %CATALINA_HOME%\lib\servlet-api.jar
+```
+
+　　配置好以后，在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
+
+　　在浏览器地址栏输入“http://localhost”出现以下画面即使安装成功了：
+
+## 三. 配置说明
+
+## 
+
+
 
