@@ -47,9 +47,15 @@ Path：          %CATALINA_HOME%\bin        //修改PATH
 CLASSPATH：     %CATALINA_HOME%\lib\servlet-api.jar    //修改CLASSPATH
 ```
 
-配置好以后，在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
+c\).**运行方式一**:服务方式 
 
-在浏览器地址栏输入“[http://localhost”出现以下画面即使安装成功了：](http://localhost”出现以下画面即使安装成功了：)
+在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
+
+在浏览器地址栏输入“http://localhost:8080”出现以下画面即使安装成功了![](/weakPassword/image/tomcat_3.png)d\). **运行方式二**: 批处理命令\(推荐\)
+
+进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
+
+![](/weakPassword/image/tomcat_2.png)
 
 ## 三. 配置说明
 
