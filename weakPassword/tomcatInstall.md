@@ -51,7 +51,7 @@ c\).**运行方式一**:服务方式
 
 在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-在浏览器地址栏输入“[http://localhost:8080”出现以下画面即使安装成功了!\[\]\(/weakPassword/image/tomcat\_3.png\)d\](http://localhost:8080”出现以下画面即使安装成功了![]%28/weakPassword/image/tomcat_3.png%29d%29%29. **运行方式二**: 批处理命令%28推荐\)
+在浏览器地址栏输入“http://localhost:8080”出现以下画面即使安装成功了!![](/weakPassword/image/tomcat_3.png)
 
 进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
 
@@ -94,14 +94,14 @@ Tomcat Manager的用户配置是在`Tomcat安装目录/conf/tomcat-users.xml`文
 
 | 用户权限 | 说明 |
 | :--- | :--- |
-| admin-gui | 允许访问HTML GUI，可以避免CSRF攻击|
-| admin-script | 允许访问文本接口|
+| admin-gui | 允许访问HTML GUI，可以避免CSRF攻击 |
+| admin-script | 允许访问文本接口 |
 | manager-gui | 允许访问html接口\(即URL路径为/manager/html/\*\) |
 | manager-script | 允许访问纯文本接口\(即URL路径为/manager/text/\*\) |
 | manager-jmx | 允许访问JMX代理接口\(即URL路径为/manager/jmxproxy/\*\) |
 | manager-status | 允许访问Tomcat只读状态页面\(即URL路径为/manager/status/\*\) |
 
-Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script、manager-jmx均具备manager-status的权限，也就是说，manager-gui、manager-script、manager-jmx三种角色权限无需再额外添加manager-status权限，即可直接访问路径/manager/status/*
+Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script、manager-jmx均具备manager-status的权限，也就是说，manager-gui、manager-script、manager-jmx三种角色权限无需再额外添加manager-status权限，即可直接访问路径/manager/status/\*
 
 ```
 <tomcat-users>
@@ -124,5 +124,18 @@ Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script�
 </tomcat-users>
 ```
 
-c\). 上传文件大小设置
+c\). 上传文件大小设置\(server.xml\)
+
+tomcat目录下的conf文件夹下，server.xml 文件中以下的位置中添加maxPostSize参数
+
+```html
+<Connector port="8081"    
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"    
+               enableLookups="false" redirectPort="8443" acceptCount="100"    
+               debug="0" connectionTimeout="20000"     
+               disableUploadTimeout="true" URIEncoding="utf-8"    
+               maxPostSize="0"/>    
+```
+
+
 
