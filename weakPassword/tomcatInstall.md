@@ -51,7 +51,7 @@ c\).**运行方式一**:服务方式
 
 在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-在浏览器地址栏输入“http://localhost:8080” 出现以下画面即使安装成功了!
+在浏览器地址栏输入“[`http://localhost:8080`”](http://localhost:8080”) 出现以下画面即使安装成功了!
 
 ![](/weakPassword/image/tomcat_3.png)
 
