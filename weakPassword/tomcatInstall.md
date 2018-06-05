@@ -95,7 +95,9 @@ b\). Manager权限设置\(tomcat-users.xml\)
   <user username="tomcat" password="tomcat" roles="tomcat"/>
   //==========================以上默认存在
   //add
-  <user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+  <user username="admin" password="admin" roles="manager-status"/>
+  <user username="admin" password="admin" roles="manager-gui,manager-script"/>
+  <user username="admin" password="admin" roles="manager-jmx"/>
 </tomcat-users>
 ```
 
