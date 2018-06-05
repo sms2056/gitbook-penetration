@@ -43,13 +43,13 @@ b\). 同Java环境变量的配置，新建以下四个变量（已存在则进�
 ```
 TOMCAT_HOME    ：C:\Program Files\tomcat　　//tomcat安装路径，到bin上一层。
 CATALINA_HOME  ：C:\Program Files\tomcat　　//同上
-Path：          %CATALINA_HOME%\bin
-CLASSPATH：     %CATALINA_HOME%\lib\servlet-api.jar
+Path：          %CATALINA_HOME%\bin        //修改PATH
+CLASSPATH：     %CATALINA_HOME%\lib\servlet-api.jar    //修改CLASSPATH
 ```
 
-　　配置好以后，在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
+配置好以后，在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-　　在浏览器地址栏输入“http://localhost”出现以下画面即使安装成功了：
+在浏览器地址栏输入“[http://localhost”出现以下画面即使安装成功了：](http://localhost”出现以下画面即使安装成功了：)
 
 ## 三. 配置说明
 
