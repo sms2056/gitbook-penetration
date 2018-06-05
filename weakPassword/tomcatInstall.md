@@ -47,11 +47,11 @@ Path：          %CATALINA_HOME%\bin        //修改PATH
 CLASSPATH：     %CATALINA_HOME%\lib\servlet-api.jar    //修改CLASSPATH
 ```
 
-c\).**运行方式一**:服务方式 
+c\).**运行方式一**:服务方式
 
 在cmd下cd到C:\Program Files\tomcat\bin，运行“service install Tomcat9”命令即可。
 
-在浏览器地址栏输入“http://localhost:8080”出现以下画面即使安装成功了![](/weakPassword/image/tomcat_3.png)d\). **运行方式二**: 批处理命令\(推荐\)
+在浏览器地址栏输入“[http://localhost:8080”出现以下画面即使安装成功了!\[\]\(/weakPassword/image/tomcat\_3.png\)d\](http://localhost:8080”出现以下画面即使安装成功了![]%28/weakPassword/image/tomcat_3.png%29d\)\). **运行方式二**: 批处理命令\(推荐\)
 
 进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
 
@@ -59,7 +59,45 @@ c\).**运行方式一**:服务方式
 
 ## 三. 配置说明
 
-## 
+**所有配置文件全部都在tomcat路径的conf文件夹中**
+
+a\). 端口设置\(server.xml\)
+
+```xml
+<Connector 
+    port="8080"               //端口设置
+    maxHttpHeaderSize="8192"
+    maxThreads="150"
+    minSpareThreads="25"
+    maxSpareThreads="75"
+    enableLookups="false"
+    redirectPort="8443"
+    acceptCount="100"
+    connectionTimeout="20000"
+    disableUploadTimeout="true"
+/>
+```
+
+b\). Manager权限设置\(tomcat-users.xml\)
+
+```
+<tomcat-users>
+  //add
+  <role rolename="manager-status"/>
+  <role rolename="manager-jmx"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-gui"/>
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="role1" password="tomcat" roles="role1"/>
+  <user username="both" password="tomcat" roles="tomcat,role1"/>
+  <user username="tomcat" password="tomcat" roles="tomcat"/>
+  //add
+  <user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+</tomcat-users>
+```
+
+c\). 上传文件大小设置
 
 
 
