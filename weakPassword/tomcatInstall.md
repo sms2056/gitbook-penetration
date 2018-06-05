@@ -101,6 +101,8 @@ Tomcat Manager的用户配置是在`Tomcat安装目录/conf/tomcat-users.xml`文
 | manager-jmx | 允许访问JMX代理接口\(即URL路径为/manager/jmxproxy/\*\) |
 | manager-status | 允许访问Tomcat只读状态页面\(即URL路径为/manager/status/\*\) |
 
+Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script、manager-jmx均具备manager-status的权限，也就是说，manager-gui、manager-script、manager-jmx三种角色权限无需再额外添加manager-status权限，即可直接访问路径/manager/status/*
+
 ```
 <tomcat-users>
   //add
