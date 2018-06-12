@@ -15,7 +15,8 @@
 ## 二. 安装步骤
 
 ### I.jdk环境安装
-参照`java运行环境配置`
+
+参照[`java运行环境配置`](/weakPassword/javaruntime.md)
 
 ### II.tomcat安装
 
