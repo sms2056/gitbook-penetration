@@ -39,9 +39,14 @@ c\).**运行方式一**:服务方式
 
 ![](/weakPassword/image/tomcat_3.png)
 
+d\).**运行方式二**:
+
 进入到comcat的解压目录`(C:\Tomcat\apache-tomcat-5\bin)`双击运行`startup.bat`
 
 ![](/weakPassword/image/tomcat_2.png)
+
+e\). 停止服务, 双击运行`(C:\Tomcat\apache-tomcat-5\bin)`下的`shutdown.bat`
+
 
 ## 三. 配置说明
 
