@@ -30,7 +30,7 @@
     * [9. Referrer方式注入](SQLInject/referrerInject.md)
     * [9. 盲注](SQLInject/blindSQLInjection.md)
     * [10. 基于时间方式注入](SQLInject/sleepInject.md)
-* [五. 反序列化](deserialization/ReadMemd)
+* [五. 反序列化](deserialization/ReadMe.md)
     * [1. jboss之invoker反序列化](deserialization/jboss.md)
     * [2. weblogic之invoker反序列化](deserialization/weblogic.md)
 * [六. 远程命令执行](remoteCommandEx/ReadMe.md)
