@@ -10,7 +10,7 @@
 | :--- | :--- |
 | Windows | windows server 2008 |
 | JDK | jdk-7u80-windows-i586 |
-| Jboss | 4~9都可以 |
+| Jboss | 4~7都可以 |
 
 ## 二. 安装步骤
 
