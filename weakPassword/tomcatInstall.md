@@ -18,7 +18,7 @@
 
 a\). 下载tomcat后解压到自己想要安装的位置
 
-b\). 同Java环境变量的配置，新建以下四个变量（已存在则进行编辑）：
+b\). 在windows环境变量中，新建以下四个变量（已存在则进行编辑）：
 
 ```
 TOMCAT_HOME    ：C:\Program Files\tomcat　　//tomcat安装路径，到bin上一层。
