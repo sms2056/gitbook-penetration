@@ -17,7 +17,7 @@ xss是一门又热门又不太受重视的Web攻击手法，为什么会这样�
 6、对website有http-only、crossdomian.xml没有用
 ```
 但是这些并没有影响黑客对此漏洞的偏爱，原因不需要多，只需要一个
+xss几乎每个网站都存在，google、baidu、360等都存在。
 
-Xss几乎每个网站都存在，google、baidu、360等都存在。
 
 
