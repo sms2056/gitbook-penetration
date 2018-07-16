@@ -102,3 +102,4 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 ```
 
 下面是代码的页面
+![](/attackUsers/xss/image/xss-6.png)
