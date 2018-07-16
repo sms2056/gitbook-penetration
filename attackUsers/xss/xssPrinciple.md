@@ -47,3 +47,8 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 
 我们试着输入abcd123，得到的结果为
 ![](/attackUsers/xss/image/xss-3.png)
+
+我们在看看源代码
+![](/attackUsers/xss/image/xss-4.png)
+
+我们输入的字符串被原封不动的输出来了，那这里我们提出来一个假设，假设我们在搜索框输入<script>alert(‘xss’)</script>会出现什么呢？如果按照上面的例子来说，它应该存在第12行的<br>与</boby>之间，变成<br><script>alert(‘xss’)</script></boby>，那应该会弹出对话框。
