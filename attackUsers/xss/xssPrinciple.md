@@ -69,6 +69,7 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 
 
 ```html
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -97,6 +98,7 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
         </center>
     </body>
 </html>
+
 ```
 
 下面是代码的页面
