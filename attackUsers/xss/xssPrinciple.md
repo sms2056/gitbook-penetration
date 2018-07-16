@@ -51,4 +51,10 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 我们在看看源代码
 ![](/attackUsers/xss/image/xss-4.png)
 
-我们输入的字符串被原封不动的输出来了，那这里我们提出来一个假设，假设我们在搜索框输入<script>alert(‘xss’)</script>会出现什么呢？如果按照上面的例子来说，它应该存在第12行的<br>与</boby>之间，变成<br><script>alert(‘xss’)</script></boby>，那应该会弹出对话框。
+我们输入的字符串被原封不动的输出来了.
+
+>那这里我们提出来一个假设，假设我们在搜索框输入`<script>alert(‘xss’)</script>`会出现什么呢？
+如果按照上面的例子来说，它应该在第12行的`<br>`与`</boby>`之间，变成`<br><script>alert(‘xss’)</script></boby>`，而这样,则会弹出一个对话框.
+
+既然假设提出来，那我们来实现下这个假设成不成立吧。
+我们输入<script>alert(‘xss’)</script>，得到的页面为
