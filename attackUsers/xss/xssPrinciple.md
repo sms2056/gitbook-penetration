@@ -150,7 +150,13 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 ```html
 <-- 当找不到图片名为1的文件时，执行alert('xss') -->
 <img scr=1 onerror=alert('xss')>
-<a href=javascrip:alert('xss')>s</a> 点击s时运行alert('xss')
-<iframe src=javascript:alert('xss');height=0 width=0 /><iframe>利用iframe的scr来弹窗
+
+<-- 点击s时运行alert('xss') -->
+<a href=javascrip:alert('xss')>s</a>
+
+<-- 利用iframe的scr来弹窗 -->
+<iframe src=javascript:alert('xss');height=0 width=0 /><iframe>
+
+<----->
 <img src="1" onerror=eval("\x61\x6c\x65\x72\x74\x28\x27\x78\x73\x73\x27\x29")></img>过滤了alert来执行弹窗
 ```
