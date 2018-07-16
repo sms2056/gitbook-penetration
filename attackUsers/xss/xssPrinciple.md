@@ -168,3 +168,8 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 这时我们要插入js代码了，怎么插呢？
 
 你可以这样
+
+```
+<script scr="js_url"></script>
+```
+
