@@ -43,3 +43,7 @@ xss几乎每个网站都存在，google、baidu、360等都存在。
 </html>
 ```
 然后，你会在页面看到这样的页面
+![](/attackUsers/xss/image/xss-2.png)
+
+我们试着输入abcd123，得到的结果为
+![](/attackUsers/xss/image/xss-3.png)
