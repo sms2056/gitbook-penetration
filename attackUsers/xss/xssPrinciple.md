@@ -14,6 +14,5 @@ xss是一门又热门又不太受重视的Web攻击手法，为什么会这样�
 4、前期需要基本的html、js功底，后期需要扎实的html、js、actionscript2/3.0等语言的功底
 5、是一种被动的攻击手法
 6、对website有http-only、crossdomian.xml没有用
-
 ```
 
