@@ -99,6 +99,42 @@ OK，原理说完了。我们来个实例。
 </html>
 ```
 
+Ajax.php：
+
+```
+12345648745465465474woainialert('xss')niaiwoasd5165484613ejkasoidoaid\
+```
+
+这时，当你打开ajax.html，就会弹出对话框。如图：
+
+![](/attackUsers/xss/image/xss-36.png)
+
+现在我来说说代码的大致意思
+
+ajax.html它的主要功能就是获取ajax.php里在woaini字符串和niaiwo之间的字符串，并把获取的字符串用eval的方式运行，
+
+Ajax.php(可以为txt，或者html等等，不要太在意是php后缀)没什么主要的功能，但是他是这个技巧的核心，eval就是运行它里面的代码。
+
+整个内容，你可以写很多没有用的字符串，但是eval运行的代码，必须是在woaini和niaiwo之间，切记！
+
+因为篇幅有限，还有一种方式，我就不细说，说出原理 大家也因该明白了。
+
+假设网站的留言板存在反射XSS，我想利用的话，我可以构造为on事件，或者伪协议(javascript:)来运行下面的代码
+
+```
+eval(document.boby.innerHTML.substring(document.boby.innerHTML.indexOf('woaini')+6,document.boby.innerHTML.indexOf('niaiwo')));
+```
+
+那我留言，内容为`woainialert(&#039;xss&#039;)niaiwo`，你就会发现弹出对话框了，这种方法隐蔽性强，利用方便，可以绕过很多的WAF。不一定非要用ajax来获取，也可以在本地使用indexOf和substring来完成。如果你想，你还可以使用javascript正则来获取指定内容，下面是代码：
+
+
+```
+
+```
+
+
+
+
 
 
 
