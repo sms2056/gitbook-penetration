@@ -93,4 +93,12 @@ document.URL.indexOf("a=")+2  是在当前URL里从开头检索a=字符，然后
 document.URL.length  是获取当前URL的长度，同时也是substring的结束值。
 ```
 
-合起来的意思就是：在URL获取a=后面的值，然后把a=后面的值给显示出来。
+合起来的意思就是：在URL获取`a=`后面的值，然后把`a=`后面的值给显示出来。
+
+我们打开，看看
+
+![](/attackUsers/xss/image/xss-24.png)
+
+怎么会出现这个问题呢？
+
+因为当前url并没有`a=`的字符，而`indexOf`的特性是，当获取的值里，如果没有找到自己要检索的值的话，返回-1。找到了则返回0。那么`document.URL.indexOf("a=")`则为-1，再加上2，得1。然后一直到URL最后。这样一来，就把file的f字符给略去了，所以才会出现`ile:///C:/Users/Administrator/Desktop/1.html`
