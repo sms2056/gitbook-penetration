@@ -165,4 +165,4 @@ addcallback
 `Modify Headers`可以伪造数据包内容，当然也可以伪造`HTTP_CLIENT_IP`来更改IP。
 
 那还有一个`REMOTE_ADDR`获取IP函数，这个怎么修改呢？答案是** 无法修改 **。
-`REMOTE_ADDR`是由 nginx 传递给 php 的参数，所以就是当前 nginx 直接通信的客户端的 IP ，而我们无法插手。所以一旦对方使用了REMOTE_ADDR函数来获取IP，那就没办法了。不过不要紧，一共3个函数，2个函数可以伪造，我们还是有很大的成功率的。好了，开始伪造。
+`REMOTE_ADDR`是由 nginx 传递给 php 的参数，所以就是当前 nginx 直接通信的客户端的 IP ，而我们无法插手。所以一旦对方使用了`REMOTE_ADDR`函数来获取IP，那就没办法了。不过不要紧，一共3个函数，2个函数可以伪造，我们还是有很大的成功率的。好了，开始伪造。
