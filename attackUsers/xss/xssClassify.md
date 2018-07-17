@@ -178,7 +178,7 @@ addcallback
 成功弹窗了。
 因为我在`X-Forwarded-For Header`里配置的是`<script>alert("xss")</script>`。而在`Modify Headers`配置的是`<script>alert("xss2")</script>`。也就是说ip138.com使用的是`X_FORWARDED_FOR`函数来获取IP的。但是DZ等著名CMS不存在，他们都过滤了。
 
-就像漏洞盒子一样(https://www.vulbox.com).
+就像漏洞盒子一样(`https://www.vulbox.com`).
 
 ![](/attackUsers/xss/image/xss-32.png)
 
