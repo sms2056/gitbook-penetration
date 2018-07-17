@@ -16,3 +16,5 @@
 问3：为什么我在chrome浏览器下测试<script>alert("xss")</script>并没有成功。
 答3：chrome内核与ie内核不一样，chrome的过滤机制比ie强。现在测试xss一般都拿能过chrome的为主，所以当你输入xss的时候，可能被chrome的过滤机制给过滤了。
 ```
+
+## 02. 反射型XSS:
