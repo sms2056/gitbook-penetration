@@ -63,7 +63,7 @@ OK，原理说完了。我们来个实例。
 
 下面是代码
 
-```
+```html
 <html>
     <head>
         <title>ajax</title>
