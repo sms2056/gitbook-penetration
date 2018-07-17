@@ -42,6 +42,7 @@
         * [7.1.2. XSS分类与漏洞挖掘](attackUsers/xss/xssClassify.md)
         * [7.1.3. XSS技巧](attackUsers/xss/xssSkill.md)
         * [7.1.4. XSS编码与绕过](attackUsers/xss/xssCode.md)
+        * [7.1.4 不常见的xss利用探索](attackUsers/xss/xssExplore.md)
     * [2. XSRF](attackUsers/xsrf/ReadMe.md)
         * [7.2.1. OSRF](attackUsers/xsrf/osrf.md)
         * [7.2.2. CSRF](attackUsers/xsrf/csrf.md)
