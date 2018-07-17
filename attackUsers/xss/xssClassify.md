@@ -128,3 +128,19 @@ document.URL.length  是获取当前URL的长度，同时也是substring的结�
 我在说下，DOM XSS 是基于javascript基础上，而且不与服务端进行交互，他的code对你是可见的，而基于服务端的反射、储蓄则是不可见的。
 
 ## 05. XSF(Flash XSS)
+XSF其实不算XSS的分类中，应该算作XSS的分支，因为在XSS使用到的技巧，在XSF只有一部分可以使用，因为XSF是基于ActionScript2/3.0语言的基础上。
+
+我写XSS系列是为了让大多数对XSS不熟悉的人知晓如何运用这门攻击手法，所以，在此我不打算深入介绍XSF，如果有机会，你们将会在后期的系列里看到关于XSF技术的。
+
+我先简要的说明下，在ActionScript2/3.0里以下几个函数需要重点关注下：
+
+```
+getURL
+navigateToURL
+ExternalInterface.call
+ExternalInterface.call
+htmlText
+addcallback
+
+```
+等。有兴趣的朋友可以先自行研究下。
