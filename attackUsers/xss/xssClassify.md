@@ -92,3 +92,5 @@ Substring       从某处到某处，把之间的内容获取。
 document.URL.indexOf("a=")+2  是在当前URL里从开头检索a=字符，然后加2(因为a=是两个字符，我们需要把他略去)，同时他也是substring的开始值
 document.URL.length  是获取当前URL的长度，同时也是substring的结束值。
 ```
+
+合起来的意思就是：在URL获取a=后面的值，然后把a=后面的值给显示出来。
