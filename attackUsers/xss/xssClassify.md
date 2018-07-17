@@ -102,3 +102,29 @@ document.URL.length  是获取当前URL的长度，同时也是substring的结�
 怎么会出现这个问题呢？
 
 因为当前url并没有`a=`的字符，而`indexOf`的特性是，当获取的值里，如果没有找到自己要检索的值的话，返回-1。找到了则返回0。那么`document.URL.indexOf("a=")`则为-1，再加上2，得1。然后一直到URL最后。这样一来，就把file的f字符给略去了，所以才会出现`ile:///C:/Users/Administrator/Desktop/1.html`
+
+大致的原理都会了，我们继续。
+
+我们可以在1.html后输入`?a=123`或则`#a=123`，只要不影响前面的路径，而且保证a=出现在URL就可以了。
+
+![](/attackUsers/xss/image/xss-25.png)
+
+![](/attackUsers/xss/image/xss-26.png)
+
+我们清楚的看到我们输入的字符被显示出来了。
+
+那我们输入`<script>alert("xss")</script>`会怎么样呢？
+
+答案肯定是弹窗。
+
+![](/attackUsers/xss/image/xss-27.png)
+
+但是，这里肯定有人无法弹窗，像下面这样。
+
+![](/attackUsers/xss/image/xss-28.png)
+
+这是因为浏览器不同，maxthon、firfox、chrome则不行，他们会在你提交数据之前，对url进行编码。这不是说DOM XSS不行了，这只是个很简单的例子，所以不用在意。
+
+我在说下，DOM XSS 是基于javascript基础上，而且不与服务端进行交互，他的code对你是可见的，而基于服务端的反射、储蓄则是不可见的。
+
+## 05. XSF(Flash XSS)
