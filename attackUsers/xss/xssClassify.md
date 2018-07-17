@@ -161,8 +161,21 @@ addcallback
 附件一：`X-Forwarded-For Header`
 因为PHP获取IP有3个函数。而`X-Forwarded-For Header`就是对其中一个函数`X_FORWARDED_FOR`起作用，`X_FORWARDED_FOR`有个缺陷可以使客户端伪造任意IP，当然包括字符串，但是对其他两个函数就不行了。
 
+![](/attackUsers/xss/image/xss-29.png)
+
 附件二：`Modify Headers`
 `Modify Headers`可以伪造数据包内容，当然也可以伪造`HTTP_CLIENT_IP`来更改IP。
 
+![](/attackUsers/xss/image/xss-30.png)
+
 那还有一个`REMOTE_ADDR`获取IP函数，这个怎么修改呢？答案是** 无法修改 **。
 `REMOTE_ADDR`是由 nginx 传递给 php 的参数，所以就是当前 nginx 直接通信的客户端的 IP ，而我们无法插手。所以一旦对方使用了`REMOTE_ADDR`函数来获取IP，那就没办法了。不过不要紧，一共3个函数，2个函数可以伪造，我们还是有很大的成功率的。好了，开始伪造。
+
+伪造好后，我们打开www.ip138.com看看
+
+![](/attackUsers/xss/image/xss-31.png)
+
+成功弹窗了。
+因为我在`X-Forwarded-For Header`里配置的是`<script>alert("xss")</script>`。而在`Modify Headers`配置的是`<script>alert("xss2")</script>`。也就是说ip138.com使用的是`X_FORWARDED_FOR`函数来获取IP的。但是DZ等著名CMS不存在，他们都过滤了。
+
+就像漏洞盒子一样(https://www.vulbox.com)，
