@@ -164,10 +164,11 @@ eval(document.boby.innerHTML.substring(document.boby.innerHTML.indexOf('woaini')
 ```
 
 ## 04. XCS
+XCS就是利用浏览器来玩XSS，它的功能比普通上的XSS还要强大，因为利用浏览器协议漏洞，可以调用浏览器的API来实现下载覆盖本地文件(可以把它这个功能理解为挂马)。
 
+XSC还可以控制浏览器的历史、设置、收藏夹等。因为之前黑哥在KCon大会上讲过了，我也就不在多说了。这是（传送门）黑哥对XCS所写的PPT，想了解的可以看看。
 
-
-
+## 05. 页面渲染XSS
 
 
 
