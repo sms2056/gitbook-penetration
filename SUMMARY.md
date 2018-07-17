@@ -45,6 +45,8 @@
     * [2. XSRF](attackUsers/xsrf/ReadMe.md)
         * [7.2.1. OSRF](attackUsers/xsrf/osrf.md)
         * [7.2.2. CSRF](attackUsers/xsrf/csrf.md)
+* [X. 杂记-Notes](notes/ReadMe.md)
+    * [X.1. URL重定向](notes/urlRedirection.md)
 * [附录](appendix/ReadMe.md)
     * [BurpSuite使用教程](appendix/burpsuite.md)
     * [SQLMAP使用教程](appendix/sqlmap.md)
