@@ -79,4 +79,4 @@ script标签里的源是我的cloudeye地址，那么看看cloudeye里面是否�
 
 DNS请求记录存在，说明html代码被浏览器解析了，到这里，似乎可以跨域触发基于header的xss了。但是经过进一步的验证过后，发现只是html代码被渲染，javascript代码却不能执行！！！
 
-## 04 self-xss
+## 04. self-xss
