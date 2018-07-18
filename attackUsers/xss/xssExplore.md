@@ -16,3 +16,4 @@
 ![](/attackUsers/xss/image/xss-39.png)
 
 ## 03. http头部反射xss
+如果xss代码的输入点是在http头部的话，那么利用表单提交的方法就不行。利用ajax异步跨域请求的方法等会再谈，先说说一个比较特殊的头信息referer。
