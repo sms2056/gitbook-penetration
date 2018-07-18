@@ -45,7 +45,7 @@
 #### 对其他header的xss尝试
 如何让受害者点击某个链接后，访问漏洞页面并带上特定的header信息，ajax可以办到这点。由于需要跨域请求，这里参考了CORS(Cross Origin Resourse-Sharing)的模型。CORS模型实现跨域资源共享需要服务器端设置一定的返回头部，所以这里攻击场景就比较狭隘，仅做学术的研究。服务器端可设置的http头如下：
 
-> Access-Control-Allow-Origin: 允许跨域访问的域，可以是一个域的列表，也可以是通配符”*”。这里要注意Origin规则只对域名有效，并不会对子目录有效。即http://foo.example/subdir/是无效的。但是不同子域名需要分开设置，这里的规则可以参照那篇同源策略
+> ** Access-Control-Allow-Origin: ** 允许跨域访问的域，可以是一个域的列表，也可以是通配符”*”。这里要注意Origin规则只对域名有效，并不会对子目录有效。即http://foo.example/subdir/是无效的。但是不同子域名需要分开设置，这里的规则可以参照那篇同源策略
 
 > Access-Control-Allow-Credentials: 是否允许请求带有验证信息，这部分将会在下面详细解释
 
