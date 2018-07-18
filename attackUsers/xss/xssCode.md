@@ -148,3 +148,4 @@ String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41)
 
 ![](/attackUsers/xss/image/xss-03.jpg)
 
+最后使用`<script>转换后的放到这里</script>`包含即可。
