@@ -13,7 +13,7 @@
 问2：XSS和CSRF有什么区别么？
 答2：有的，XSS是获取信息，不需要提前知道其他用户页面的代码和数据包。CSRF是代替用户完成指定的动作，需要知道其他用户页面的代码和数据包。
 
-问3：为什么我在chrome浏览器下测试<script>alert("xss")</script>并没有成功。
+问3：为什么我在chrome浏览器下测试`<script>alert("xss")</script>`并没有成功。
 答3：chrome内核与ie内核不一样，chrome的过滤机制比ie强。现在测试xss一般都拿能过chrome的为主，所以当你输入xss的时候，可能被chrome的过滤机制给过滤了。
 ```
 
