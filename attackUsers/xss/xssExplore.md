@@ -92,4 +92,4 @@ self-xss可以说是最最鸡肋的xss了，攻击者只能在自己这里弹窗
 
 ![](/attackUsers/xss/image/xss-51.png)
 
-self-xss，结合csrf便可将鸡肋变成可攻击的漏洞。
+self-xss结合csrf便可将鸡肋变成可攻击的漏洞。
