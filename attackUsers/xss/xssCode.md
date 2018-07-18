@@ -77,3 +77,11 @@ XSS平台里也获取到了。
 <标签 on事件="js代码">
 ```
 
+```html
+<script
+woaini>
+alert(123)
+</script
+woaini>
+```
+
