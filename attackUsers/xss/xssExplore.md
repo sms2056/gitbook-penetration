@@ -35,8 +35,9 @@
 除了window.location跳转外，还可以利用iframe、表单提交等方式。
 
 >利用iframe标签:
+
 ![](/attackUsers/xss/image/xss-43.png)
 
-
 >利用表单提交的方式:
+
 ![](/attackUsers/xss/image/xss-44.png)
