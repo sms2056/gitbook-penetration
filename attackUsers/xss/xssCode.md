@@ -125,6 +125,12 @@ woaini>
 
 针对开启了`magic_quotes_gpc`的网站，我们可以通过javascript中的`String.fromCharCode`方法来绕过，我们可以把`alert("XSS");`转换为
 ```html
+String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41)
+```
 
+那么我们的XSS语句就变成了
+
+```html
+<script>String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41, 59)</script> 
 ```
 
