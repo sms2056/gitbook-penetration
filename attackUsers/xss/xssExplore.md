@@ -47,10 +47,10 @@
 
 > ** Access-Control-Allow-Origin: ** 允许跨域访问的域，可以是一个域的列表，也可以是通配符”*”。这里要注意Origin规则只对域名有效，并不会对子目录有效。即http://foo.example/subdir/是无效的。但是不同子域名需要分开设置，这里的规则可以参照那篇同源策略
 
-> Access-Control-Allow-Credentials: 是否允许请求带有验证信息，这部分将会在下面详细解释
+> ** Access-Control-Allow-Credentials: ** 是否允许请求带有验证信息，这部分将会在下面详细解释
 
-> Access-Control-Expose-Headers: 允许脚本访问的返回头，请求成功后，脚本可以在XMLHttpRequest中访问这些头的信息(貌似webkit没有实现这个)
+> ** Access-Control-Expose-Headers: ** 允许脚本访问的返回头，请求成功后，脚本可以在XMLHttpRequest中访问这些头的信息(貌似webkit没有实现这个)
 
-> Access-Control-Max-Age: 缓存此次请求的秒数。在这个时间范围内，所有同类型的请求都将不再发送预检请求而是直接使用此次返回的头作为判断依据，非常有用，大幅优化请求次数
+> ** Access-Control-Max-Age: ** 缓存此次请求的秒数。在这个时间范围内，所有同类型的请求都将不再发送预检请求而是直接使用此次返回的头作为判断依据，非常有用，大幅优化请求次数
 
-> Access-Control-Allow-Methods: 允许使用的请求方法，以逗号隔开
+> ** Access-Control-Allow-Methods: ** 允许使用的请求方法，以逗号隔开
