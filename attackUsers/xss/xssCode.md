@@ -135,3 +135,5 @@ String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41)
 <script>String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41, 59)</script> 
 ```
 
+String.fromCharCode()是javascript中的字符串方法，用来把ASCII转换为字符串。
+
