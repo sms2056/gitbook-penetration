@@ -45,7 +45,7 @@
 #### 对其他header的xss尝试
 如何让受害者点击某个链接后，访问漏洞页面并带上特定的header信息，ajax可以办到这点。由于需要跨域请求，这里参考了CORS(Cross Origin Resourse-Sharing)的模型。CORS模型实现跨域资源共享需要服务器端设置一定的返回头部，所以这里攻击场景就比较狭隘，仅做学术的研究。服务器端可设置的http头如下：
 
-> ** Access-Control-Allow-Origin: ** 允许跨域访问的域，可以是一个域的列表，也可以是通配符”*”。这里要注意Origin规则只对域名有效，并不会对子目录有效。即http://foo.example/subdir/是无效的。但是不同子域名需要分开设置，这里的规则可以参照那篇同源策略
+> ** Access-Control-Allow-Origin: ** 允许跨域访问的域，可以是一个域的列表，也可以是通配符”*”。这里要注意Origin规则只对域名有效，并不会对子目录有效。即`http://foo.example/subdir/`是无效的。但是不同子域名需要分开设置，这里的规则可以参照那篇同源策略
 
 > ** Access-Control-Allow-Credentials: ** 是否允许请求带有验证信息，这部分将会在下面详细解释
 
@@ -56,3 +56,27 @@
 > ** Access-Control-Allow-Methods: ** 允许使用的请求方法，以逗号隔开
 
 > ** Access-Control-Allow-Headers: ** 允许自定义的头部，以逗号隔开，大小写不敏感
+
+基于CORS模型，浏览器发起的ajax请求分为简单跨域请求和非简单跨域请求。简单跨域请求不需要服务器允许便可发起，但浏览器会阻止响应。服务器端的漏洞页面代码如下：
+
+![](/attackUsers/xss/image/xss-45.png)
+
+本地测试html代码如下，X-Forwarded-For设置为
+
+![](/attackUsers/xss/image/xss-46.png)
+
+通过查看cloudeye上是否有dns请求记录验证标签是否被渲染。
+
+![](/attackUsers/xss/image/xss-47.png)
+
+利用chrome打开测试页面，可以看到ajax请求发送成功，并且打开该ajax请求的Preview，可以看到似乎response的html代码被解析了。
+
+![](/attackUsers/xss/image/xss-48.png)
+
+script标签里的源是我的cloudeye地址，那么看看cloudeye里面是否有DNS记录，
+
+![](/attackUsers/xss/image/xss-49.png)
+
+DNS请求记录存在，说明html代码被浏览器解析了，到这里，似乎可以跨域触发基于header的xss了。但是经过进一步的验证过后，发现只是html代码被渲染，javascript代码却不能执行！！！
+
+## 04 self-xss
