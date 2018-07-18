@@ -65,7 +65,7 @@ XSS平台里也获取到了。
 <scr<script>rip>alalertert</scr</script>rip> (需要利用waf的不完整性)
 
 
-//后面会将
+//后面会讲
 <script>eval(String.fromCharCode(97, 108, 101, 114, 116, 40, 39, 120, 115, 115, 39, 41))</script>
 
 ```
