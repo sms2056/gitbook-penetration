@@ -18,5 +18,5 @@
 ## 03. http头部反射xss
 如果xss代码的输入点是在http头部的话，那么利用表单提交的方法就不行。利用ajax异步跨域请求的方法等会再谈，先说说一个比较特殊的头信息referer。
 
-### referer头信息xss
+#### referer头信息xss
 当浏览器进行跳转时，一般会将前一个页面的url带入referer头部中，如果我们控制了跳转前的url，并使之跳转到target页面，那么referer头的xss漏洞便可以利用。当然，chrome和firefox会对跳转前url里的”<>”等进行urlencode，但是IE却不会，所以这种方法在IE下适用。漏洞页面如下：
