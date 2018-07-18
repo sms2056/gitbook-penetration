@@ -118,4 +118,11 @@ woaini>
 
 当然了，不止API，有的插件还调用了外部的JS、CSS、iframe(HTML)等，我们也可以控制他们里来完成攻击。
 
+## 07. 绕过 magic_quotes_gpc
+** magic_quotes_gpc=ON **是php中的安全设置，开启后会把一些特殊字符进行轮换，比如`'`(单引号)转换为`\'`，`"`(双引号)转换为`\"` ，`\`转换为`\\`
+
+比如：`<script>alert("xss");</script>`会转换为`<script>alert(\"xss\");</script>`,这样我们的xss就不生效了。
+
+针对开启了`magic_quotes_gpc`的网站，我们可以通过javascript中的String.fromCharCode方法来绕过，我们可以把alert("XSS");转换为
+
 
