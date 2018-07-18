@@ -80,3 +80,16 @@ script标签里的源是我的cloudeye地址，那么看看cloudeye里面是否�
 DNS请求记录存在，说明html代码被浏览器解析了，到这里，似乎可以跨域触发基于header的xss了。但是经过进一步的验证过后，发现只是html代码被渲染，javascript代码却不能执行！！！
 
 ## 04. self-xss
+self-xss可以说是最最鸡肋的xss了，攻击者只能在自己这里弹窗，一般厂商都会选择忽略self-xss。但self-xss如果和csrf结合起来，会有意想不到的效果。
+
+> 攻击场景: 某个站点个人简介处存在self-xss，并且保存后并不触发，再次编辑会触发。添加个人简介和编辑处存在csrf
+
+在这种场景下，有一个思路就是：利用csrf添加xss代码，并且让攻击者点击或者跳转触发。需要给被攻击者第一个链接用于csrf插入xss代码
+
+![](/attackUsers/xss/image/xss-50.png)
+
+再诱导被攻击者点击漏洞触发的链接：`http://target.com/info/edit`，亦或发送下面的跳转链接：
+
+![](/attackUsers/xss/image/xss-51.png)
+
+self-xss，结合csrf便可将鸡肋变成可攻击的漏洞。
