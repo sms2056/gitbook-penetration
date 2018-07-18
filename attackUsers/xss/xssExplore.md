@@ -22,5 +22,21 @@
 当浏览器进行跳转时，一般会将前一个页面的url带入referer头部中，如果我们控制了跳转前的url，并使之跳转到target页面，那么referer头的xss漏洞便可以利用。当然，chrome和firefox会对跳转前url里的”<>”等进行urlencode，但是IE却不会，所以这种方法在IE下适用。
 漏洞页面如下：
 
+![](/attackUsers/xss/image/xss-40.png)
+
 简单的将referer信息输出，那么构造一个跳转：
 
+![](/attackUsers/xss/image/xss-41.png)
+
+访问在IE11上测试成功
+
+![](/attackUsers/xss/image/xss-42.png)
+
+除了window.location跳转外，还可以利用iframe、表单提交等方式。
+
+>利用iframe标签:
+![](/attackUsers/xss/image/xss-43.png)
+
+
+>利用表单提交的方式:
+![](/attackUsers/xss/image/xss-44.png)
