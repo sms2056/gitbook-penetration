@@ -54,3 +54,5 @@
 > ** Access-Control-Max-Age: ** 缓存此次请求的秒数。在这个时间范围内，所有同类型的请求都将不再发送预检请求而是直接使用此次返回的头作为判断依据，非常有用，大幅优化请求次数
 
 > ** Access-Control-Allow-Methods: ** 允许使用的请求方法，以逗号隔开
+
+> ** Access-Control-Allow-Headers: ** 允许自定义的头部，以逗号隔开，大小写不敏感
