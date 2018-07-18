@@ -41,3 +41,5 @@
 >利用表单提交的方式:
 
 ![](/attackUsers/xss/image/xss-44.png)
+
+#### 对其他header的xss尝试
