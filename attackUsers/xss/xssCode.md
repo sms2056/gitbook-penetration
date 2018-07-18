@@ -139,5 +139,5 @@ String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41)
 
 如何转换ASCII码呢？
 
-
-
+我们可以使用[hackbar](https://addons.mozilla.org/en-US/firefox/addon/hackbar/
+) 来搞定
