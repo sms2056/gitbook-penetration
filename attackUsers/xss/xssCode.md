@@ -124,6 +124,7 @@ woaini>
 比如：`<script>alert("xss");</script>`会转换为`<script>alert(\"xss\");</script>`,这样我们的xss就不生效了。
 
 针对开启了`magic_quotes_gpc`的网站，我们可以通过javascript中的`String.fromCharCode`方法来绕过，我们可以把`alert("XSS");`转换为
+
 ```html
 String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41)
 ```
