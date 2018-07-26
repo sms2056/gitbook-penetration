@@ -45,11 +45,11 @@ Host: baidu.com
 ```
 
 请求报文是由请求方法，请求URI，协议版本，可选的请求首部字段和内容实体构成。 
-** 请求报文: **
+** 请求报文格式 : **
 
 ![](/base/image/httpProtocol/httpP-4.png)
 
-** 响应报文: **
+** 响应报文格式 : **
 
 ![](/base/image/httpProtocol/httpP-5.png)
 
