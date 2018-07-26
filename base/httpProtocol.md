@@ -56,6 +56,9 @@ urn:oasis:names:specification:docbook:dtd:xml:4.1.2
 
 所以，用URI，这样你通常技术上是正确的，URL可不一定。最后“URL”这个术语正在被弃用。
 
+**URL的语法**
+
+
 ## 0x02 简单的HTTP协议
 
 HTTP协议一般是用户客户端和服务器之间的通信，一般都是客户端请求，服务端响应，类似于一问一答式的通信。
