@@ -80,6 +80,8 @@ Cache-Control: max-age = 0
 Content-Type : text/html
 ```
 
+> 有的字段值可以是多个值
+
 
 
 
