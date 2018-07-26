@@ -170,24 +170,6 @@ Cache-Control: private, max-age=0, no-cache​
 ||||
 ||||
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 4.6 请求首部字段
 
 ![](/base/image/httpProtocol/httpP-10.png)
