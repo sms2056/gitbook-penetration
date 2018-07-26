@@ -145,6 +145,9 @@ Cache-Control: private, max-age=0, no-cache​
 ```
 ** 缓存请求指令 **
 
+** 缓存响应指令 **
+
+
 
 ### 4.6 请求首部字段
 
