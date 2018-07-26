@@ -128,6 +128,8 @@ Keep-Alive   : timeout = 15,max = 100
 
 ### 4.5 HTTP通用首部字段
 
+![](/base/image/httpProtocol/httpP-9.png)
+
 ### 4.6 请求首部字段
 
 
