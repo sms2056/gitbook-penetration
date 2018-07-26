@@ -31,6 +31,15 @@ HTTP协议一般是用户客户端和服务器之间的通信，一般都是客�
 
 ![](/base/image/httpProtocol/httpP-3.png)
 
+这就是HTTP通信最基本的格式了，从1中发送请求，从2中返回响应。
+请求的格式是：
+```
+GET /index.htm HTTP/1.1
+Host: baidu.com
+```
+
+
+
 
 
 
