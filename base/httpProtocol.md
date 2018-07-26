@@ -84,7 +84,7 @@ Content-Type : text/html
 
 ```
 #例:
-Keep-Alive: timeout = 15,max = 100
+Keep-Alive   : timeout = 15,max = 100
 ```
 
 
