@@ -92,6 +92,7 @@ Keep-Alive   : timeout = 15,max = 100
 
 ![](/base/image/httpProtocol/httpP-8.png)
 
+> 2XX，表示响应结果为请求被正常处理
 |状态码|解释|
 |----|----|
 |||
