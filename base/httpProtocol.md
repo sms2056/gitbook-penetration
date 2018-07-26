@@ -147,15 +147,14 @@ Cache-Control: private, max-age=0, no-cache​
 
 |指令|参数|说明|
 |----|----|----|
-|no-cache|||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
+|no-cache|无 ||
+|no-store|无 ||
+|max-age = [ 秒] |必须||
+|max-stale( = [ 秒])|可省||
+|min-fresh = [ 秒] |||
+|no-transform|||
+|only-if-cached|||
+|cache-extension|||
 
 
 
