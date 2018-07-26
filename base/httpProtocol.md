@@ -134,7 +134,7 @@ Keep-Alive   : timeout = 15,max = 100
 > Cache-Control:
 > 通过指定首部字段 Cache-Control 的指令，就能操作缓存的工作机制
 
-![](/base/image/httpProtocol/httpP-12.png)
+![](/base/image/httpProtocol/httpP-13.png)
 
 
 
