@@ -74,7 +74,7 @@ HTTP首部字段结构 :
 > 首部字段名：字段值 
 
 ```
-# 例:
+#例:
 Host         :baidu.com
 Cache-Control: max-age = 0
 Content-Type : text/html
