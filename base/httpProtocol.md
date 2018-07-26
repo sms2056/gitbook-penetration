@@ -87,6 +87,11 @@ Content-Type : text/html
 Keep-Alive   : timeout = 15,max = 100
 ```
 
+### 4.4 HTTP状态码
+响应报文中HTTP状态码表示了客户端HTTP请求的返回结果，得到响应的结果码，有助于了解我们请求时是否成功，如果错误了，是哪种类型的错误。状态码有5种类型，分别表示了对应的返回响应原因。 
+
+![](/base/image/httpProtocol/httpP-8.png)
+
 
 
 
