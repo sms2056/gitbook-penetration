@@ -147,14 +147,14 @@ Cache-Control: private, max-age=0, no-cache​
 
 |指令|参数|说明|
 |----|----|----|
-|no-cache|无 |强制向源服务器再次验证|
-|no-store|无 |不缓存请求或响应的任何内容|
-|max-age = [ 秒] |必须|响应的最大Age值|
+|no-cache           |无 |强制向源服务器再次验证|
+|no-store           |无 |不缓存请求或响应的任何内容|
+|max-age = [ 秒]    |必须|响应的最大Age值|
 |max-stale( = [ 秒])|可省|接收已过期的响应|
-|min-fresh = [ 秒] |必需|期望在指定时间内的响应仍有效|
-|no-transform|无|代理不可更改媒体类型|
-|only-if-cached|无|从缓存获取资源|
-|cache-extension|无|新指令标记（token）|
+|min-fresh = [ 秒]  |必需|期望在指定时间内的响应仍有效|
+|no-transform       |无|代理不可更改媒体类型|
+|only-if-cached     |无|从缓存获取资源|
+|cache-extension    |无|新指令标记（token）|
 
 
 
