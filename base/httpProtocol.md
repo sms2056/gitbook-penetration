@@ -64,6 +64,9 @@ Host: baidu.com
 
 ![](/base/image/httpProtocol/httpP-6.png)
 
+### 4.2 HTTP响应报文
+响应报文中，HTTP报文由HTTP版本，状态码，HTTP首部字段构成。
+
 ![](/base/image/httpProtocol/httpP-7.png)
 
 
