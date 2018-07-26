@@ -151,10 +151,10 @@ Cache-Control: private, max-age=0, no-cache​
 |no-store|无 ||
 |max-age = [ 秒] |必须||
 |max-stale( = [ 秒])|可省||
-|min-fresh = [ 秒] |||
-|no-transform|||
-|only-if-cached|||
-|cache-extension|||
+|min-fresh = [ 秒] |必需||
+|no-transform|无||
+|only-if-cached|无||
+|cache-extension|无||
 
 
 
