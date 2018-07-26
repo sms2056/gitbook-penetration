@@ -26,6 +26,12 @@ TCP/IP协议就是其中的这么一套协议族。
 ## 0x02 URI和URL
 ### 0x02.1 URI与URL的定义
 
+![](/base/image/httpProtocol/httpP-14.png)
+
+URI：统一资源标志符（Uniform Resource Identifier）
+URL：统一资源定位符（uniform resource location）
+说白了，URI与URL都是定位资源位置的，就是表示这个资源的位置信息，就像经纬度一样可以表示你在世界的哪个角落。URI是一种宽泛的含义更广的定义，而URL则是URI的一个子集，就是说URL是URI的一部分。
+换句话说，每个URL都是URI，但是不是每个URI都是URL的。
 
 
 
