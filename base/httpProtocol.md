@@ -27,8 +27,12 @@ TCP/IP协议就是其中的这么一套协议族。
 ### 0x02.1 URI与URL的定义
 理解URI和URL的区别，我们引入URN这个概念
 URI : 统一资源标志符(Uniform Resource Identifier)
+
 URL : 统一资源定位符(uniform resource location)
+基本的URL格式为 "协议://IP地址/路径和文件名"，如：ftp://ftp.is.co.za/rfc/rfc1808.txt
+
 URN : 统一资源名称(Universal Resource Name)
+现实中可见的使用：P2P下载中使用的磁力链接
 
 ![](/base/image/httpProtocol/httpP-14.png)
 
