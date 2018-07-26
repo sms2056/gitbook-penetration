@@ -136,6 +136,12 @@ Keep-Alive   : timeout = 15,max = 100
 
 ### 4.7 响应首部字段
 
+![](/base/image/httpProtocol/httpP-11.png)
+
+### 4.8 实体首部资源
+
+![](/base/image/httpProtocol/httpP-12.png)
+
 
 
 
