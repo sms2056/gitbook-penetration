@@ -55,6 +55,8 @@ Host: baidu.com
 
 ![](/base/image/httpProtocol/httpP-5.png)
 
+** HTTP的版本 **
+
 ** 短连接与长连接: **
 
 ``` 
