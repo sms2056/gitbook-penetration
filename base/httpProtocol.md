@@ -59,5 +59,13 @@ Host: baidu.com
 
 ## 0x04 HTTP首部
 
-### 4.1. HTTP请求报文
+### 4.1 HTTP请求报文
+请求报文中，HTTP报文有方法，URI，HTTP版本，HTTP首部字段等构成。
+
+![](/base/image/httpProtocol/httpP-6.png)
+
+![](/base/image/httpProtocol/httpP-7.png)
+
+
+
 
