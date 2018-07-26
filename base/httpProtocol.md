@@ -169,9 +169,7 @@ Cache-Control: private, max-age=0, no-cache​
 |proxy-revalidate |无|要求中间缓存服务器对缓存的响应有效性再进行确认|
 |max-age = [ 秒] |必须|响应的最大Age值|
 |s-maxage = [ 秒]|必须|公共缓存服务器响应的最大Age值|
-|cache-extension | - |新指令标记（token）
-
-|
+|cache-extension | - |新指令标记（token)|
 
 public                              无              可向任意方提供响应的缓存
 private                            可省略        仅向特定用户返回响应
