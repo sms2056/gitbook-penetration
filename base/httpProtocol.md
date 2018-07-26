@@ -147,8 +147,8 @@ Cache-Control: private, max-age=0, no-cache​
 
 |指令|参数|说明|
 |----|----|----|
-|no-cache|无 ||
-|no-store|无 ||
+|no-cache|无 |强制向源服务器再次验证|
+|no-store|无 |不缓存请求或响应的任何内容|
 |max-age = [ 秒] |必须||
 |max-stale( = [ 秒])|可省||
 |min-fresh = [ 秒] |必需||
