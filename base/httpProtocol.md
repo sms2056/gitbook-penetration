@@ -137,9 +137,10 @@ Keep-Alive   : timeout = 15,max = 100
 
 ![](/base/image/httpProtocol/httpP-13.png)
 
-指令的参数是可选的，多个指令之间通过“,”分隔。首部字段 Cache-Control 的指令可用于请求及响应时。
+首部字段 Cache-Control 的指令可用于请求及响应时。
 
 ```
+# 指令的参数是可选的，多个指令之间通过“,”分隔。
 Cache-Control: private, max-age=0, no-cache​
 ```
 
