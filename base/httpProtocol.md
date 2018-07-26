@@ -131,7 +131,7 @@ Keep-Alive   : timeout = 15,max = 100
 
 ![](/base/image/httpProtocol/httpP-9.png)
 
-#### Cache-Control:
+##### Cache-Control:
 
 > 通过指定首部字段 Cache-Control 的指令，就能操作缓存的工作机制
 
