@@ -92,6 +92,12 @@ Keep-Alive   : timeout = 15,max = 100
 
 ![](/base/image/httpProtocol/httpP-8.png)
 
+|状态码|解释|
+|----|----|
+|||
+|||
+|||
+|||
 
 
 
