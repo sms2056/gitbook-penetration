@@ -154,7 +154,7 @@ Cache-Control: private, max-age=0, no-cache​
 |min-fresh = [ 秒]  |必需|期望在指定时间内的响应仍有效|
 |no-transform       |无|代理不可更改媒体类型|
 |only-if-cached     |无|从缓存获取资源|
-|cache-extension    | -|新指令标记（token）|
+|cache-extension    | - |新指令标记（token）|
 
 ** 缓存响应指令 **
 
