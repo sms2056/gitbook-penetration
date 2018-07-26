@@ -143,7 +143,7 @@ Keep-Alive   : timeout = 15,max = 100
 # 指令的参数是可选的，多个指令之间通过“,”分隔。
 Cache-Control: private, max-age=0, no-cache​
 ```
-
+** 缓存请求指令 **
 
 
 ### 4.6 请求首部字段
