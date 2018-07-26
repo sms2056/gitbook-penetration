@@ -50,6 +50,6 @@ Host: baidu.com
 
 ![](/base/image/httpProtocol/httpP-5.png)
 
-
+## 0x03 HTTP是无状态的协议
 
 
