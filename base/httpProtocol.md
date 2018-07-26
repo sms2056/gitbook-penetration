@@ -127,8 +127,12 @@ Keep-Alive   : timeout = 15,max = 100
 |503 Service unavailable|表示服务器暂时处于超负荷或者正在停机维护，无法处理请求|
 
 ### 4.5 HTTP通用首部字段
+通用首部字段是指，请求报文和响应报文双方都会使用的首部
 
 ![](/base/image/httpProtocol/httpP-9.png)
+
+> Cache-Control:
+通过指定首部字段 Cache-Control 的指令，就能操作缓存的工作机制
 
 ### 4.6 请求首部字段
 
