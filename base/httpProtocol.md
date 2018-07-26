@@ -142,7 +142,7 @@ Keep-Alive   : timeout = 15,max = 100
 
 ![](/base/image/httpProtocol/httpP-12.png)
 
-### 4.9 非HTTP首部字段
+### 4.9 非HTTP/1.1首部字段
 还有一些并不是HTTP协议本身的字段，但是很有用，也需要了解。比如为Cookie服务的首部字段，有Set-Cookie（响应首部字段） 和Cookie（请求首部字段），这是管理服务器和客户端之间状态的信息，它的工作机制是用户识别和状态管理。
 
 
