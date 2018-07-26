@@ -57,6 +57,10 @@ urn:oasis:names:specification:docbook:dtd:xml:4.1.2
 所以，用URI，这样你通常技术上是正确的，URL可不一定。最后“URL”这个术语正在被弃用。
 
 **URL的语法**
+URL提供了一种访问定位因特网上任意资源的手段，但是这些资源可以通过不同的方法（例如HTTP、FTP、SMTP）来访问，不管怎样，他都基本上由9个部分构成：
+```
+ <scheme>://<user>:<password>@<host>:<port>/<path>;<params>?<query>#<fragment>
+```
 
 
 ## 0x02 简单的HTTP协议
