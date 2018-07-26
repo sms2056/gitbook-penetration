@@ -132,6 +132,8 @@ Keep-Alive   : timeout = 15,max = 100
 
 ### 4.6 请求首部字段
 
+![](/base/image/httpProtocol/httpP-10.png)
+
 
 
 
