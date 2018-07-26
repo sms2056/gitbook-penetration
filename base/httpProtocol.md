@@ -58,7 +58,7 @@ Host: baidu.com
 ** HTTP的版本 **
 
 > HTTP/0.9
-HTTP于1990年问世。现在的HTTP其实包含HTTP1.0之前的版本，因此被称为HTTP/0.9；
+于1990年问世。现在的HTTP其实包含HTTP1.0之前的版本，因此被称为HTTP/0.9；
 HTTP协议的最初版本，功能简陋，仅支持请求方式GET，并且仅能请求访问HTML格式的
 
 > HTTP/1.0
