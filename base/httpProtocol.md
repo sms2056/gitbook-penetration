@@ -140,7 +140,7 @@ Keep-Alive   : timeout = 15,max = 100
 |TRACE  |用来进行环回测试的请求报文|
 |CONNECT|用于代理服务器|
 
-### 4.5 HTTP通用首部字段
+### 4.6 HTTP通用首部字段
 通用首部字段是指，请求报文和响应报文双方都会使用的首部
 
 ![](/base/image/httpProtocol/httpP-9.png)
