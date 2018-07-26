@@ -160,16 +160,16 @@ Cache-Control: private, max-age=0, no-cache​
 
 |指令|参数|说明|
 |----|----|----|
-|public|||
-|private|||
-|no-cache|||
-|no-store|||
-|no-transform|||
-|must-revalidate|||
-|proxy-revalidate |||
-|max-age = [ 秒]|||
-|s-maxage = [ 秒]|||
-|cache-extension|||
+|public|无||
+|private|可省略||
+|no-cache|无||
+|no-store|无||
+|no-transform|无||
+|must-revalidate|无||
+|proxy-revalidate |无||
+|max-age = [ 秒]|必须||
+|s-maxage = [ 秒]|必须||
+|cache-extension| - ||
 
 public                              无              可向任意方提供响应的缓存
 private                            可省略        仅向特定用户返回响应
