@@ -39,7 +39,22 @@ URN : 统一资源名称(Universal Resource Name)
 说白了，URI与URL都是定位资源位置的，就是表示这个资源的位置信息，就像经纬度一样可以表示你在世界的哪个角落。URI是一种宽泛的含义更广的定义，而URL则是URI的一个子集，就是说URL是URI的一部分。
 换句话说，每个URL都是URI，但是不是每个URI都是URL的。
 
+例:
+ftp://ftp.is.co.za/rfc/rfc1808.txt (also a URL because of the protocol)
+http://www.ietf.org/rfc/rfc2396.txt (also a URL because of the protocol)
+ldap://[2001:db8::7]/c=GB?objectClass?one (also a URL because of the protocol)
+mailto:John.Doe@example.com (also a URL because of the protocol)
+news:comp.infosystems.www.servers.unix (also a URL because of the protocol)
+tel:+1-816-555-1212
+telnet://192.0.2.16:80/ (also a URL because of the protocol)
+urn:oasis:names:specification:docbook:dtd:xml:4.1.2
+这些全都是URI, 其中有些事URL. 哪些? 就是那些提供了访问机制的
 
+我们经常使用的URI不是严格技术意义上的URL。例如：你需要的文件在files.hp.com. 这是URI，但不是URL--系统可能会对很多协议和端口都做出正确的反应。
+
+你去http://files.hp.com 和ftp://files.hp.com.可能得到完全不同的内容。这种情况可能更加普遍，想想不同谷歌域名上的不同服务啊。
+
+所以，用URI，这样你通常技术上是正确的，URL可不一定。最后“URL”这个术语正在被弃用。
 
 ## 0x02 简单的HTTP协议
 
