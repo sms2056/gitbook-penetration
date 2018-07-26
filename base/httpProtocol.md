@@ -82,6 +82,11 @@ Content-Type : text/html
 
 > 有的字段值可以是多个值
 
+```
+#例:
+Keep-Alive: timeout = 15,max = 100
+```
+
 
 
 
