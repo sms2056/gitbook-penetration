@@ -69,6 +69,16 @@ Host: baidu.com
 
 ![](/base/image/httpProtocol/httpP-7.png)
 
+### 4.3 HTTP首部字段
+HTTP首部字段结构 :
+> 首部字段名：字段值 
+
+```
+Host         :baidu.com
+Cache-Control: max-age = 0
+Content-Type : text/html
+```
+
 
 
 
